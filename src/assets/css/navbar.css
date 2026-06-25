@@ -1,0 +1,156 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.55);
+  border-bottom: solid 1px var(--primary-border-color);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+nav {
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+nav ul li.logo a {
+  display: flex;
+  align-items: center;
+
+  gap: 0.4rem;
+}
+
+nav ul li.logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+#logo-text {
+  color: var(--text-color);
+  font-family: "Chillax", sans-serif;
+  font-size: 1.5rem;
+}
+
+nav ul li.toggle {
+  display: block;
+  order: 1;
+}
+
+nav ul li.menu-item {
+  width: 100%;
+  text-align: center;
+  order: 2;
+  display: none;
+}
+
+nav ul li.menu-item a {
+  font-weight: 600;
+}
+
+/* Visa dropdown menyn */
+nav ul:has(li .menu-btn:checked) .menu-item {
+  display: block;
+}
+
+/* Skapa hamburger menyn */
+nav ul li .menu-btn {
+  display: none;
+}
+
+nav ul li .menu-icon {
+  padding: 1.75rem 1.25rem;
+  cursor: pointer;
+}
+
+nav ul li .menu-icon .nav-icon {
+  background-color: var(--text-color);
+  display: block;
+  height: 3px;
+  width: 1.6rem;
+  position: relative;
+  transition: background-color 0.2s ease-out;
+}
+
+nav ul li .menu-icon .nav-icon:before,
+nav ul li .menu-icon .nav-icon:after {
+  content: "";
+  background-color: var(--text-color);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: block;
+  transition: all 0.2s ease-out;
+}
+
+nav ul li .menu-icon .nav-icon:before {
+  top: -0.45rem;
+}
+
+nav ul li .menu-icon .nav-icon:after {
+  top: 0.45rem;
+}
+
+/* Animera vår hamburger meny */
+nav ul li .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+/* Rotera första linjen */
+nav ul li .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Rotera andra linjen */
+nav ul li .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* Media frågor vid icke mobila enheter */
+@media (min-width: 768px) {
+  header {
+    padding: 0.5rem;
+  }
+
+  nav ul li.logo div {
+    position: relative;
+    display: flex;
+    height: 3rem;
+  }
+
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav ul li.logo #logo-text {
+    font-size: 1.7rem;
+  }
+
+  nav ul {
+    flex-wrap: nowrap;
+  }
+
+  nav ul li.menu-item {
+    display: block;
+    width: auto;
+  }
+
+  nav ul li.logo {
+    flex-grow: 1;
+  }
+
+  nav ul li.toggle {
+    display: none;
+  }
+}

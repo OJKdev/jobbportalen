@@ -1,0 +1,47 @@
+@import "../../assets/css/site.css";
+@import "../jobs/jobList.css";
+
+article {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+aside {
+  border-left: solid 1px var(--primary-border-color);
+}
+
+aside ul {
+  list-style: none;
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
+aside p {
+  padding-left: 2rem;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.buttons button {
+  max-width: 300px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.email {
+  font-size: 0.8em;
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/55174c58a9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="users.css" />
+    <script type="module" src="users.js" defer></script>
+    <title>Jobb Portalen | Registrering</title>
+  </head>
+  <body>
+    <header></header>
+    <main class="container">
+      <h1>Skapa konto</h1>
+      <form>
+        <div class="form-radio">
+          <input type="radio" id="individual" name="role" value="individual" checked />
+          <label class="radio-label" for="individual">Sökande</label>
+        </div>
+        <div class="form-radio">
+          <input type="radio" id="company" name="role" value="company" />
+          <label class="radio-label" for="company">Arbetsgivare</label>
+        </div>
+
+        <div class="form-controls" id="firstName-field">
+          <input type="text" name="firstName" id="firstName" />
+          <label for="firstName">Förnamn</label>
+        </div>
+        <div class="form-controls" id="lastName-field">
+          <input type="text" name="lastName" id="lastName" />
+          <label for="lastName">Efternamn</label>
+        </div>
+        <div class="form-controls" id="companyName-field">
+          <input type="text" name="companyName" id="companyName" />
+          <label for="companyName">Företag</label>
+        </div>
+
+        <div class="form-controls">
+          <input required type="email" name="email" id="email" />
+          <label for="email">E-Post</label>
+        </div>
+        <div class="form-controls">
+          <input required type="password" name="password" id="password" />
+          <label for="password">Lösenord</label>
+        </div>
+        <button class="btn btn-rounded">Registrera</button>
+      </form>
+    </main>
+  </body>
+</html>

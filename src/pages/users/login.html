@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/55174c58a9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="users.css" />
+    <script type="module" src="login.js" defer></script>
+    <title>Jobb Portalen | Logga in</title>
+  </head>
+  <body>
+    <header></header>
+    <main class="container">
+      <h1>Logga in</h1>
+      <section>
+        <div id="alert">
+          <p>
+            Det gick inte att logga in med dessa uppgifterna.... Prova igen eller
+            <a href="/pages/users/register.html">skapa ett konto.</a>
+          </p>
+        </div>
+      </section>
+      <form>
+        <div class="form-controls">
+          <input required type="text" name="username" id="username" placeholder=" " />
+          <label for="username">E-post adress</label>
+        </div>
+        <div class="form-controls">
+          <input required type="password" name="password" id="password" placeholder=" " />
+          <label for="username">Lösenord</label>
+        </div>
+        <button class="btn btn-rounded">Logga in</button>
+        <p>Inget konto?</p>
+        <a class="register-link" href="/pages/users/register.html">Klicka här för att skapa ett konto</a>
+      </form>
+    </main>
+  </body>
+</html>

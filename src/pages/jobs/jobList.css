@@ -1,0 +1,69 @@
+#jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.job {
+  display: flex;
+
+  min-height: 7rem;
+  max-height: 12rem;
+  border: solid 1px var(--primary-border-color);
+  justify-content: space-between;
+  flex-direction: row;
+  border-radius: 0.4rem;
+  box-shadow: none;
+  margin: 0 1rem 0 1rem;
+  padding: 0.3rem;
+  transition: all 0.2s ease-out;
+  text-align: left;
+}
+
+.job:hover {
+  border: solid 1px var(--link-color);
+  box-shadow: var(--shadow);
+}
+
+.job a {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  max-width: 85%;
+}
+
+.job h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.job p {
+  font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  margin-left: 0.2rem;
+}
+
+.job button {
+  height: 1.25rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--link-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  margin: 0.4rem;
+}
+
+.job button:hover {
+  color: var(--priamary-color);
+}

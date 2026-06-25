@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "role": "individual",
+      "firstName": "Arne",
+      "lastName": "Karlsson",
+      "companyName": "",
+      "email": "arne@mail.com",
+      "password": "Password",
+      "id": "fPpXH9olQDk"
+    },
+    {
+      "role": "company",
+      "firstName": "",
+      "lastName": "",
+      "companyName": "NordicTech Solutions",
+      "email": "arne@mail.com",
+      "password": "Password",
+      "id": "b7i4ow5fxr"
+    }
+  ],
+  "jobs": [
+    {
+      "title": "Junior Systemutvecklare",
+      "description": "Vi söker dig som kan googla felmeddelanden snabbare än våra seniorer. Hos oss får du arbeta med modern teknik, gamla buggar och möten som kunde varit ett mejl. Perfekt för dig som vill upptäcka att programmering består av cirka 20 % kod och 80 % felsökning.",
+      "id": "bN0kWnj52h",
+      "type": "Jobb",
+      "companyId": "b7i4ow5fxr",
+      "iamgeFileName": "NordicTech.webp"
+    },
+    {
+      "title": "Jobb inom café och service",
+      "description": "Gillar du kaffe, bakverk och att låtsas vara morgonpigg? Då kan detta vara platsen för dig. Du får lära dig kundbemötande, kassahantering och konsten att le även när någon beställer en havrelatte med exakt 43 graders temperatur.",
+      "id": "zoBk3s52h",
+      "type": "PRAO",
+      "companyId": "",
+      "iamgeFileName": "SmultronStallet.webp"
+    },
+    {
+      "title": "Trädgårdsjobb – Gräs växer inte av sig själv",
+      "description": "Vill du arbeta utomhus istället för att stirra på en skärm hela dagen? Hos oss får du plantera, beskära och upptäcka att ogräs har en arbetsmoral som få människor kan matcha.",
+      "id": "vRR76vaiOK",
+      "type": "LIA",
+      "companyId": "",
+      "iamgeFileName": "greenFuture.webp"
+    },
+    {
+      "title": "Lager- och logistikjobb",
+      "description": "Tycker du om ordning, struktur och att flytta saker från punkt A till punkt B? Då kommer du passa perfekt hos oss. Vi erbjuder en fartfylld miljö där paket ibland verkar teleportera sig till helt fel hylla.",
+      "id": "CSQjhNBiFH",
+      "type": "PRAO",
+      "companyId": "",
+      "iamgeFileName": "ScanLogistik.webp"
+    },
+    {
+      "title": "Arbeta inom marknadsföring och design",
+      "description": "Vi söker dig som har idéer, kreativitet och minst tre åsikter om typsnitt. Här får du skapa innehåll, designa kampanjer och lära dig varför kunden alltid vill ha logotypen lite större",
+      "id": "jJdY53LFbD",
+      "type": "LIA",
+      "companyId": "",
+      "iamgeFileName": "kreativaByrån.webp"
+    }
+  ],
+  "bookmarkedJobs": [
+    {
+      "userId": "fPpXH9olQDk",
+      "jobId": "bN0kWnj52h",
+      "id": "CuvGwDLgrlI"
+    }
+  ],
+  "userSavedJobs2": [
+    {
+      "jobId": "zoBk3s52h",
+      "userId": "fPpXH9olQDk",
+      "id": "U4VHasdassdFiPZH5Y"
+    },
+    {
+      "jobId": "bN0kWnj52h",
+      "userId": "fPpXH9olQDk",
+      "id": "PgpQ1JYUZ5o"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

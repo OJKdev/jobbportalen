@@ -1,0 +1,139 @@
+@import "./navbar.css";
+@import "./utilities.css";
+
+@font-face {
+  font-family: "Chillax";
+  src: url("/assets/fonts/Chillax-Semibold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi-Medium.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --background-color: #ede7e3;
+  --priamary-color: #489fb5;
+  --secondary-color: #ffa62b;
+  --text-color: #222222;
+  --primary-border-color: #d7d7d7;
+  --button-text-color: #f1f1f1;
+  --link-color: #16697a;
+  --alert-color: rgba(255, 0, 0, 0.3);
+  --max-width: 992px;
+
+  --shadow:
+    0 0 0.125rem 0 rgba(45, 45, 45, 0.16), 0 0.25rem 0.5rem 0 rgba(45, 45, 45, 0.08),
+    0 0.5rem 1rem 0 rgba(45, 45, 45, 0.04);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Satoshi", sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+main {
+  padding: 7rem 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  border: solid 1px var(--primary-border-color);
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+}
+
+form button {
+  max-width: 400px;
+}
+
+/* Animerad placeholder */
+form .form-controls {
+  width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  height: 40px;
+  line-height: 40px;
+}
+
+form .form-radio {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  margin-left: 10px;
+}
+
+form input {
+  position: absolute;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 0.8rem;
+  line-height: 40px;
+  font-size: 1.1rem;
+  background: transparent;
+  border-bottom: solid 1px var(--primary-border-color);
+  color: var(--text-color);
+  transition: 0.1s ease-out;
+  z-index: 1;
+}
+
+form label {
+  position: absolute;
+
+  padding-left: 1rem;
+  color: #7b7b7b;
+}
+
+form input:focus,
+form input:valid {
+  color: var(--text-color);
+}
+
+form input:focus + label {
+  display: none;
+}
+
+.form-controls input:focus:invalid {
+  border-bottom: solid 2px var(--alert-color);
+}

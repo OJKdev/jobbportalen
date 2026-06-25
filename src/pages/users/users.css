@@ -1,0 +1,45 @@
+@import "../../assets/css/site.css";
+
+input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--link-color);
+}
+
+.radio-label {
+  display: block !important;
+  margin-left: 20px;
+  color: var(--text-color);
+}
+
+#firstName-field,
+#lastName-field,
+#companyName-field {
+  display: none;
+}
+
+form:has(#individual:checked) #firstName-field,
+form:has(#individual:checked) #lastName-field {
+  display: block;
+}
+
+form:has(#company:checked) #companyName-field {
+  display: block;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+#alert {
+  padding: 0.6rem;
+  max-width: 80%;
+  border: 1px solid var(--alert-color);
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
+  display: none;
+}

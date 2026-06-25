@@ -1,0 +1,20 @@
+{
+  "name": "praktiseranu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "api": "npx json-server src/data/api.json --port=5001"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "json-server": "^1.0.0-beta.15"
+  }
+}
