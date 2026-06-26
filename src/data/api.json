@@ -17,6 +17,33 @@
       "email": "arne@mail.com",
       "password": "Password",
       "id": "b7i4ow5fxr"
+    },
+    {
+      "role": "individual",
+      "firstName": "jocke",
+      "lastName": "jcoke",
+      "companyName": "",
+      "email": "jocke@mail.com",
+      "password": "Password",
+      "id": "_tAV4UpgdAo"
+    },
+    {
+      "role": "individual",
+      "firstName": "Micke",
+      "lastName": "Gurra",
+      "companyName": "",
+      "email": "micke@mail.com",
+      "password": "Password",
+      "id": "ezRofsSshOY"
+    },
+    {
+      "role": "individual",
+      "firstName": "Micke",
+      "lastName": "guyrra",
+      "companyName": "",
+      "email": "micke@micke.com",
+      "password": "Password",
+      "id": "NVHqqlWxV8c"
     }
   ],
   "jobs": [
@@ -63,9 +90,24 @@
   ],
   "bookmarkedJobs": [
     {
-      "userId": "fPpXH9olQDk",
+      "userId": "_tAV4UpgdAo",
+      "jobId": "null",
+      "id": "LEF6eUw1YME"
+    },
+    {
+      "userId": "ezRofsSshOY",
+      "jobId": "null",
+      "id": "IsbUJ1-FSQc"
+    },
+    {
+      "userId": "ezRofsSshOY",
+      "jobId": null,
+      "id": "PHMJBPNsIgQ"
+    },
+    {
+      "userId": "_tAV4UpgdAo",
       "jobId": "bN0kWnj52h",
-      "id": "CuvGwDLgrlI"
+      "id": "I-AZsKUtVYM"
     }
   ],
   "userSavedJobs2": [

@@ -13,7 +13,7 @@ export default class Navbar {
                 <a href="/">
                 <img src="/assets/images/praktiseaLogo.png" alt="logotype" />
             
-            <span id="logo-text">Jobb Portalen</span></a>
+            <span id="logo-text">JobbPortalen</span></a>
           
             </li>
             <li class="toggle">

@@ -1,0 +1,47 @@
+.searchbar {
+  width: 90%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 0rem;
+  border: solid 1px #7e7e7e;
+  box-shadow: var(--shadow);
+  margin: 2rem;
+  border-radius: 0.8rem;
+}
+
+.searchbar form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+  border: 0;
+  padding: 0;
+}
+
+.searchbar form input {
+  font-family: "Satoshi-regualr", sans-serif;
+  position: initial;
+
+  height: 40px;
+
+  margin: 0.5rem;
+
+  border-radius: 0.8rem 0 0 0.8rem;
+
+  border-bottom: 0;
+}
+
+.searchbar button {
+  border: 0;
+  margin-right: 0.5rem;
+  max-width: 60px;
+}
+
+.fa-magnifying-glass {
+  margin-left: 1rem;
+}

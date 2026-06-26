@@ -6,12 +6,19 @@
 [] sökande - fylla i forumlär för att söka
 
 [x] lista alla jobb
-[] sida för att visa enskilt jobb
-[] söka på ord för att få fram resultat
+[x] sida för att visa enskilt jobb
+
+[x] sökaruta
+    [x] återanvändbar ES6 Modul för searchbar
+    [x] söka på ord för att få fram resultat
+
 [x] sökande ska kunna spara jobb
+    [x] återanvändbar ES6 Modul för alla bookmark-knappar
+
+[x] dirigerad till login när man försöker bokmärka jobb utloggad
 
 
 [] js för att validera fält iställetför css
-[] 
-[]
+[] inte kunna skapa användare med samma epost som redan finns
+[] skapa en footer modul
 []

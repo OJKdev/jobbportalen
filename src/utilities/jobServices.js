@@ -1,12 +1,26 @@
-import DataClient from "../../utilities/data-client.js";
+import DataClient from "./data-client.js";
 
 export default class JobsServices {
   constructor() {
     this.userId = localStorage.getItem("user");
+    this.quedJob = localStorage.getItem("quedJob");
+
+    if (this.userId && this.quedJob) {
+      this.bookmarkJob(this.quedJob);
+      localStorage.removeItem("quedJob");
+      location.href = localStorage.getItem("returnLocation");
+
+      return;
+    }
   }
 
   async bookmarkJob(jobId) {
-    //TODO: skicka till inloggning om man 'r utloggad
+    if (!this.userId) {
+      localStorage.setItem("quedJob", jobId);
+      localStorage.setItem("returnLocation", location);
+      location.href = "/pages/users/login.html";
+      return;
+    }
     console.log("sparar jobb", jobId);
     const client = new DataClient("bookmarkedJobs");
     console.log(this.userId);
@@ -40,9 +54,10 @@ export default class JobsServices {
     return jobs.filter((job) => bookMarkedjobIds.includes(job.id));
   }
 
-  async getBookmarkedJobIds(jobs) {
-    console.log(jobs);
-    const jobIds = jobs.map((item) => item.id);
+  async getBookmarkedJobIds() {
+    const bookMarkedJobs = await this.getBookmarkedJobs();
+    console.log();
+    const jobIds = bookMarkedJobs.map((item) => item.id);
     console.log(jobIds);
     return jobIds;
   }
@@ -57,5 +72,30 @@ export default class JobsServices {
     const client = new DataClient("jobs");
     const job = await client.findById(id);
     return job;
+  }
+
+  handleSaveButton() {
+    const buttons = document.querySelectorAll(".fa-bookmark");
+
+    buttons.forEach((icon) => {
+      const button = icon.parentElement;
+
+      button.addEventListener("click", async () => {
+        const id = button.id;
+        console.log(id);
+
+        if (icon.classList.contains("fa-regular")) {
+          await this.bookmarkJob(id);
+
+          icon.classList.remove("fa-regular");
+          icon.classList.add("fa-solid");
+        } else {
+          await this.unBookmarkJob(id);
+
+          icon.classList.remove("fa-solid");
+          icon.classList.add("fa-regular");
+        }
+      });
+    });
   }
 }

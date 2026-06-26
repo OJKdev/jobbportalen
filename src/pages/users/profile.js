@@ -1,7 +1,7 @@
 import Navbar from "../../utilities/menu.js";
 import DataClient from "../../utilities/data-client.js";
-import JobList from "../jobs/jobList.js";
-import jobsServices from "../jobs/jobServices.js";
+import JobList from "../../utilities/jobList.js";
+import jobsServices from "../../utilities/jobServices.js";
 
 const userId = localStorage.getItem("user");
 const logoutBtn = document.querySelector("#logout");
@@ -46,13 +46,12 @@ const displayUserInfo = async (user) => {
 
 const displayBoomarkedJobs = async () => {
   const service = new jobsServices();
-  const bookmarkedJobs = await service.getBookmarkedJobs();
-  const bookmarkedJobsIds = await service.getBookmarkedJobIds(bookmarkedJobs);
 
-  new JobList("#jobs", bookmarkedJobs, bookmarkedJobsIds, "Du har inga sparade jobb...", {
-    onSave: (jobId) => service.bookmarkJob(jobId),
-    onDiscard: (jobId) => service.unBookmarkJob(jobId),
-  });
+  const bookmarkedJobs = await service.getBookmarkedJobs();
+  const bookmarkedJobsIds = await service.getBookmarkedJobIds();
+
+  new JobList("#jobs", bookmarkedJobs, bookmarkedJobsIds, "Du har inga sparade jobb...");
+  service.handleSaveButton();
 };
 
 const logout = () => {
