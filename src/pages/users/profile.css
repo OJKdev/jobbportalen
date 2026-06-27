@@ -9,3 +9,10 @@
 .email {
   font-size: 0.8em;
 }
+
+#user-info {
+  margin-bottom: 1rem;
+}
+#jobs {
+  margin-bottom: 1rem;
+}

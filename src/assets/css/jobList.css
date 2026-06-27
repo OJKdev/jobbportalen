@@ -14,7 +14,7 @@
   flex-direction: row;
   border-radius: 0.4rem;
   box-shadow: none;
-  margin: 0 1rem 0 1rem;
+
   padding: 0.3rem;
   transition: all 0.2s ease-out;
   text-align: left;
@@ -66,4 +66,9 @@
 
 .job button:hover {
   color: var(--priamary-color);
+}
+@media (min-width: 768px) {
+  .job {
+    margin: 0 1rem 0 0;
+  }
 }

@@ -42,16 +42,17 @@ const displayJob = async (id) => {
           <aside>
             <ul>
             <li><img src="/assets/images/logos/${job.iamgeFileName}" alt="${companyName}" /></li>
-          
-            
-             <li> <button id="${job.id}" class="btn btn-primary">
-                <i class="fa-regular fa-file-lines"></i>
-                Ansök
-              </button></li>
-             <li> <button id="${job.id}" class="btn btn-secondary">
+            <ul>
+             
+             <li> <button id="${job.id}" class="btn btn-rounded">
                 <i class="${bookmarkedJobIds.includes(id) ? "fa-solid" : "fa-regular"} fa-bookmark"></i>
                 ${bookmarkedJobIds.includes(id) ? "Jobb sparat" : "Spara jobb"} 
               </button></li>
+              <li> <button id="${job.id}" class="btn btn-rounded">
+                <i class="fa-regular fa-file-lines"></i>
+                Ansök
+              </button></li>
+              <ul>
             </ul>
           </aside>
         </article>
