@@ -1,0 +1,21 @@
+@import "../../assets/css/site.css";
+@import "../../assets/css/pagegrid.css";
+
+form {
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+  outline: 0 !important;
+  border: 1px solid var(--primary-border-color);
+}
+
+textarea::placeholder {
+  font-family: Satoshi;
+  letter-spacing: 0.05em;
+}

@@ -6,7 +6,7 @@ import SearchBar from "../../utilities/searchbar.js";
 
 const userId = localStorage.getItem("user");
 let search;
-let headerTitle = "Lediga jobb";
+let headerTitle = "";
 const jobs = undefined;
 
 const initApp = () => {
@@ -18,8 +18,6 @@ const initApp = () => {
   if (search) {
     headerTitle = `Sökresultat av "${search}"`;
   }
-
-  document.querySelector("h1").insertAdjacentHTML("afterbegin", headerTitle);
 
   displayJobs();
 };
@@ -38,7 +36,7 @@ const displayJobs = async () => {
 
   const bookmarkedJobsIds = await service.getBookmarkedJobIds();
 
-  new JobList("#jobs", listJobs, bookmarkedJobsIds, "Kunde inte hitta några jobb...");
+  new JobList(headerTitle, ".content", listJobs, bookmarkedJobsIds, "Kunde inte hitta några jobb...");
   service.handleSaveButton();
 };
 

@@ -1,5 +1,6 @@
 article {
   display: grid;
+  width: 100%;
 }
 
 aside ul {
@@ -17,6 +18,11 @@ aside {
   border-bottom: 1px solid var(--primary-border-color);
 }
 
+aside img {
+  width: 100px;
+  height: 100px;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -27,7 +33,7 @@ aside {
   max-width: 300px;
 }
 
-.left-column {
+.content {
   order: 2;
   display: flex;
   flex-direction: column;
@@ -39,7 +45,7 @@ aside {
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
-  .left-column {
+  .content {
     order: 0;
     margin-bottom: 1rem;
   }

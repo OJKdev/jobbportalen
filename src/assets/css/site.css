@@ -73,15 +73,19 @@ a {
   text-decoration: none;
   color: var(--link-color);
 }
+p,
+a,
+button {
+  letter-spacing: 0.05em;
+}
 
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  border: solid 1px var(--primary-border-color);
+
   padding: 1.5rem 1rem;
-  border-radius: 1rem;
 }
 
 form button {

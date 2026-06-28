@@ -13,11 +13,6 @@ const initApp = async () => {
   if (!id) return;
 
   await displayJob(id);
-
-  const applyButton = document.querySelector(".apply");
-  applyButton.addEventListener("click", (e) => {
-    apply(e.currentTarget.id);
-  });
 };
 
 const displayJob = async (id) => {
@@ -34,18 +29,29 @@ const displayJob = async (id) => {
 
   const bookmarkedJobIds = await service.getBookmarkedJobIds();
 
-  const h1Html = /*html*/ `${job.title}`;
+  const h1Html = /*html*/ `Ansök till ${job.title}`;
 
   const contentHtml = /*html*/ `
-       
-            <p>
-              ${job.description}
-            </p>
-
-          <p>${companyName}</p>
-          
         
-  `;
+            <form id="application-form">
+           
+        <textarea
+          id="cover-letter"
+          name="coverLetter"
+          rows="15"
+          placeholder="Berätta lite om dig själv och varför du söker tjänsten..."
+          required
+        ></textarea>
+     
+
+      <button type="submit" class="btn btn-rounded">
+       <i class="fa-regular fa-file-lines"></i>
+                      Ansök
+      </button>
+        </form>
+         
+          `;
+
   const asideHtml = /*html*/ `      
             <ul>
               <li>
@@ -56,13 +62,7 @@ const displayJob = async (id) => {
                   <li> 
                     <button id="${job.id}" class="btn btn-rounded">
                       <i class="${bookmarkedJobIds.includes(id) ? "fa-solid" : "fa-regular"} fa-bookmark"></i>
-                      ${bookmarkedJobIds.includes(id) ? "Jobb sparat" : "Spara jobb"} 
-                    </button>
-                  </li>
-                  <li> 
-                    <button id="${job.id}" class="apply btn btn-rounded">
-                      <i class="fa-regular fa-file-lines"></i>
-                      Ansök
+                      ${bookmarkedJobIds.includes(id) ? "Jobb sparat" : "Spara till senare"} 
                     </button>
                   </li>
                 <ul>
@@ -74,10 +74,6 @@ const displayJob = async (id) => {
   document.querySelector(".content").insertAdjacentHTML("afterbegin", contentHtml);
   document.querySelector("aside").insertAdjacentHTML("afterbegin", asideHtml);
   service.handleSaveButton();
-};
-
-const apply = (id) => {
-  location.href = "job-application.html?id=" + id;
 };
 
 initApp();

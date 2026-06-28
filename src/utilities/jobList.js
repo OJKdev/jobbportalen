@@ -1,5 +1,6 @@
 export default class JobList {
-  constructor(element, selectedJobs, bookMarkedJobIds, emptyMessage) {
+  constructor(header, element, selectedJobs, bookMarkedJobIds, emptyMessage) {
+    this.header = header;
     this.jobs = selectedJobs;
     this.emptyMessage = emptyMessage;
     this.bookMarkedJobIds = bookMarkedJobIds;
@@ -11,7 +12,8 @@ export default class JobList {
   }
 
   #createJobList() {
-    let html = "";
+    let html = /*html*/ `<h2>${this.header}</h2>
+    <div id="jobs">`;
 
     if (this.jobs && this.jobs.length > 0) {
       this.jobs.map(
@@ -33,7 +35,7 @@ export default class JobList {
             
   `),
       );
-
+      html += `</div>`;
       return html;
     } else {
       return /*html*/ `<p>${this.emptyMessage}</p>`;

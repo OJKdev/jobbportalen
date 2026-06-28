@@ -56,6 +56,14 @@
       "iamgeFileName": "NordicTech.webp"
     },
     {
+      "title": "Junior Systemutvecklare",
+      "description": "",
+      "id": "bN0kWnj52g",
+      "type": "Jobb",
+      "companyId": "b7i4ow5fxr",
+      "iamgeFileName": "NordicTech.webp"
+    },
+    {
       "title": "Jobb inom café och service",
       "description": "Gillar du kaffe, bakverk och att låtsas vara morgonpigg? Då kan detta vara platsen för dig. Du får lära dig kundbemötande, kassahantering och konsten att le även när någon beställer en havrelatte med exakt 43 graders temperatur.",
       "id": "zoBk3s52h",
@@ -90,35 +98,20 @@
   ],
   "bookmarkedJobs": [
     {
+      "jobId": "zoBk3s52h",
       "userId": "_tAV4UpgdAo",
-      "jobId": "null",
-      "id": "LEF6eUw1YME"
-    },
-    {
-      "userId": "ezRofsSshOY",
-      "jobId": "null",
-      "id": "IsbUJ1-FSQc"
-    },
-    {
-      "userId": "ezRofsSshOY",
-      "jobId": null,
-      "id": "PHMJBPNsIgQ"
-    },
-    {
-      "userId": "_tAV4UpgdAo",
-      "jobId": "bN0kWnj52h",
-      "id": "AxMvDt9ISAc"
+      "id": "U4VHasdassdFiPZH5Y"
     }
   ],
   "userSavedJobs2": [
     {
       "jobId": "zoBk3s52h",
-      "userId": "fPpXH9olQDk",
+      "userId": "_tAV4UpgdAo",
       "id": "U4VHasdassdFiPZH5Y"
     },
     {
       "jobId": "bN0kWnj52h",
-      "userId": "fPpXH9olQDk",
+      "userId": "_tAV4UpgdAo",
       "id": "PgpQ1JYUZ5o"
     }
   ],

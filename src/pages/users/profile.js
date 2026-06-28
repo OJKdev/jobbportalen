@@ -50,7 +50,7 @@ const displayBoomarkedJobs = async () => {
   const bookmarkedJobs = await service.getBookmarkedJobs();
   const bookmarkedJobsIds = await service.getBookmarkedJobIds();
 
-  new JobList("#jobs", bookmarkedJobs, bookmarkedJobsIds, "Du har inga sparade jobb...");
+  new JobList("Sparade Jobb", ".content", bookmarkedJobs, bookmarkedJobsIds, "Du har inga sparade jobb...");
   service.handleSaveButton();
 };
 
