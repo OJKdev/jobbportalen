@@ -3,11 +3,19 @@ import DataClient from "./data-client.js";
 export default class JobsServices {
   constructor() {
     this.userId = localStorage.getItem("user");
-    this.quedJob = localStorage.getItem("quedJob");
+    this.quedBookmark = localStorage.getItem("quedBookmark");
+    this.quedApplication = localStorage.getItem("quedApplication");
 
-    if (this.userId && this.quedJob) {
-      this.bookmarkJob(this.quedJob);
-      localStorage.removeItem("quedJob");
+    if (this.userId && this.quedBookmark) {
+      this.bookmarkJob(this.quedBookmark);
+      localStorage.removeItem("quedBookmark");
+      location.href = localStorage.getItem("returnLocation");
+
+      return;
+    }
+
+    if (this.userId && this.quedApplication) {
+      localStorage.removeItem("quedApplication");
       location.href = localStorage.getItem("returnLocation");
 
       return;
@@ -16,7 +24,7 @@ export default class JobsServices {
 
   async bookmarkJob(jobId) {
     if (!this.userId) {
-      localStorage.setItem("quedJob", jobId);
+      localStorage.setItem("quedBookmark", jobId);
       localStorage.setItem("returnLocation", location);
       location.href = "/pages/users/login.html";
       return;
@@ -62,6 +70,17 @@ export default class JobsServices {
     return jobIds;
   }
 
+  applyJob(id) {
+    if (!this.userId) {
+      localStorage.setItem("quedApplication", id);
+      localStorage.setItem("returnLocation", "/pages/jobs/job-application.html?id=" + id);
+      location.href = "/pages/users/login.html";
+      return;
+    }
+
+    location.href = "/pages/jobs/job-application.html?id=" + id;
+  }
+
   async listJobs() {
     const client = new DataClient("jobs");
     const jobs = await client.listAll();
@@ -74,7 +93,14 @@ export default class JobsServices {
     return job;
   }
 
-  handleSaveButton() {
+  handleButtons() {
+    const applyButton = document.querySelector(".apply");
+    if (applyButton) {
+      applyButton.addEventListener("click", async (e) => {
+        this.applyJob(e.currentTarget.id);
+      });
+    }
+
     const buttons = document.querySelectorAll(".fa-bookmark");
 
     buttons.forEach((icon) => {

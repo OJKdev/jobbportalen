@@ -17,6 +17,8 @@ const initApp = () => {
 
   if (search) {
     headerTitle = `Sökresultat av "${search}"`;
+  } else {
+    headerTitle = `Alla jobb`;
   }
 
   displayJobs();
@@ -37,7 +39,7 @@ const displayJobs = async () => {
   const bookmarkedJobsIds = await service.getBookmarkedJobIds();
 
   new JobList(headerTitle, ".content", listJobs, bookmarkedJobsIds, "Kunde inte hitta några jobb...");
-  service.handleSaveButton();
+  service.handleButtons();
 };
 
 initApp();

@@ -73,7 +73,7 @@ const displayJob = async (id) => {
   document.querySelector("h1").insertAdjacentHTML("afterbegin", h1Html);
   document.querySelector(".content").insertAdjacentHTML("afterbegin", contentHtml);
   document.querySelector("aside").insertAdjacentHTML("afterbegin", asideHtml);
-  service.handleSaveButton();
+  service.handleButtons();
 };
 
 initApp();

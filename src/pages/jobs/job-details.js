@@ -13,11 +13,6 @@ const initApp = async () => {
   if (!id) return;
 
   await displayJob(id);
-
-  const applyButton = document.querySelector(".apply");
-  applyButton.addEventListener("click", (e) => {
-    apply(e.currentTarget.id);
-  });
 };
 
 const displayJob = async (id) => {
@@ -73,11 +68,7 @@ const displayJob = async (id) => {
   document.querySelector("h1").insertAdjacentHTML("afterbegin", h1Html);
   document.querySelector(".content").insertAdjacentHTML("afterbegin", contentHtml);
   document.querySelector("aside").insertAdjacentHTML("afterbegin", asideHtml);
-  service.handleSaveButton();
-};
-
-const apply = (id) => {
-  location.href = "job-application.html?id=" + id;
+  service.handleButtons();
 };
 
 initApp();
