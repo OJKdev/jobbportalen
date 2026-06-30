@@ -20,6 +20,7 @@
   gap: 0;
   border: 0;
   padding: 0.5rem;
+  box-shadow: none;
 }
 
 .searchbar form input {

@@ -14,7 +14,7 @@ input[type="radio"] {
 
 #firstName-field,
 #lastName-field,
-#companyName-field {
+#employerName-field {
   display: none;
 }
 
@@ -23,7 +23,7 @@ form:has(#individual:checked) #lastName-field {
   display: block;
 }
 
-form:has(#company:checked) #companyName-field {
+form:has(#employer:checked) #employerName-field {
   display: block;
 }
 
@@ -33,13 +33,4 @@ section {
   align-items: center;
   text-align: center;
   gap: 1rem;
-}
-
-#alert {
-  padding: 0.6rem;
-  max-width: 80%;
-  border: 1px solid var(--alert-color);
-  border-radius: 0.8rem;
-  margin-bottom: 1rem;
-  display: none;
 }

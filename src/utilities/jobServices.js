@@ -4,20 +4,18 @@ export default class JobsServices {
   constructor() {
     this.userId = localStorage.getItem("user");
     this.quedBookmark = localStorage.getItem("quedBookmark");
-    this.quedApplication = localStorage.getItem("quedApplication");
+    this.quedJobApplication = localStorage.getItem("quedJobApplication");
 
     if (this.userId && this.quedBookmark) {
       this.bookmarkJob(this.quedBookmark);
       localStorage.removeItem("quedBookmark");
       location.href = localStorage.getItem("returnLocation");
-
       return;
     }
 
-    if (this.userId && this.quedApplication) {
-      localStorage.removeItem("quedApplication");
+    if (this.userId && this.quedJobApplication) {
+      localStorage.removeItem("quedJobApplication");
       location.href = localStorage.getItem("returnLocation");
-
       return;
     }
   }
@@ -72,13 +70,13 @@ export default class JobsServices {
 
   applyJob(id) {
     if (!this.userId) {
-      localStorage.setItem("quedApplication", id);
-      localStorage.setItem("returnLocation", "/pages/jobs/job-application.html?id=" + id);
+      localStorage.setItem("quedJobApplication", id);
+      localStorage.setItem("returnLocation", "/pages/jobs/job-application-form.html?id=" + id);
       location.href = "/pages/users/login.html";
       return;
     }
 
-    location.href = "/pages/jobs/job-application.html?id=" + id;
+    location.href = "/pages/jobs/job-application-form.html?id=" + id;
   }
 
   async listJobs() {
@@ -101,27 +99,28 @@ export default class JobsServices {
       });
     }
 
-    const buttons = document.querySelectorAll(".fa-bookmark");
+    const bookmarkButtons = document.querySelectorAll(".fa-bookmark");
+    if (bookmarkButtons) {
+      bookmarkButtons.forEach((icon) => {
+        const button = icon.parentElement;
 
-    buttons.forEach((icon) => {
-      const button = icon.parentElement;
+        button.addEventListener("click", async () => {
+          const id = button.id;
+          console.log(id);
 
-      button.addEventListener("click", async () => {
-        const id = button.id;
-        console.log(id);
+          if (icon.classList.contains("fa-regular")) {
+            await this.bookmarkJob(id);
 
-        if (icon.classList.contains("fa-regular")) {
-          await this.bookmarkJob(id);
+            icon.classList.remove("fa-regular");
+            icon.classList.add("fa-solid");
+          } else {
+            await this.unBookmarkJob(id);
 
-          icon.classList.remove("fa-regular");
-          icon.classList.add("fa-solid");
-        } else {
-          await this.unBookmarkJob(id);
-
-          icon.classList.remove("fa-solid");
-          icon.classList.add("fa-regular");
-        }
+            icon.classList.remove("fa-solid");
+            icon.classList.add("fa-regular");
+          }
+        });
       });
-    });
+    }
   }
 }

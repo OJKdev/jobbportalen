@@ -39,7 +39,6 @@ export default class JobList {
       return html;
     } else {
       return /*html*/ `<p>${this.emptyMessage}</p>`;
-      console.log(this.emptyMessage);
     }
   }
 

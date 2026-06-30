@@ -32,7 +32,8 @@ const displayJobs = async () => {
     listJobs = listJobs.filter(
       (job) =>
         job.title.toLowerCase().includes(search.toLowerCase()) ||
-        job.description.toLowerCase().includes(search.toLowerCase()),
+        job.description.toLowerCase().includes(search.toLowerCase()) ||
+        job.companyName.toLowerCase().includes(search.toLowerCase()),
     );
   }
 

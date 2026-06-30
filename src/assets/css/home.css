@@ -10,12 +10,10 @@
   gap: 1rem;
 }
 
-.landing p {
+.landing p,
+h3 {
+  letter-spacing: 0.04em;
   text-align: center;
-}
-
-.landing h3 {
-  letter-spacing: 0.05em;
 }
 
 .logo-big {

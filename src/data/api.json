@@ -4,25 +4,34 @@
       "role": "individual",
       "firstName": "Arne",
       "lastName": "Karlsson",
-      "companyName": "",
+      "employerName": "",
       "email": "arne@mail.com",
       "password": "Password",
       "id": "fPpXH9olQDk"
     },
     {
-      "role": "company",
+      "role": "employer",
       "firstName": "",
       "lastName": "",
-      "companyName": "NordicTech Solutions",
+      "employerName": "NordicTech Group AB",
       "email": "arne@mail.com",
       "password": "Password",
       "id": "b7i4ow5fxr"
     },
     {
+      "role": "employer",
+      "firstName": "",
+      "lastName": "",
+      "employerName": "Bemannings Portalen",
+      "email": "BemanningsPortalen@mail.com",
+      "password": "Password",
+      "id": "HKeZTE7QMm"
+    },
+    {
       "role": "individual",
       "firstName": "jocke",
       "lastName": "jcoke",
-      "companyName": "",
+      "employerName": "",
       "email": "jocke@mail.com",
       "password": "Password",
       "id": "_tAV4UpgdAo"
@@ -31,7 +40,7 @@
       "role": "individual",
       "firstName": "Micke",
       "lastName": "Gurra",
-      "companyName": "",
+      "employerName": "",
       "email": "micke@mail.com",
       "password": "Password",
       "id": "ezRofsSshOY"
@@ -40,10 +49,19 @@
       "role": "individual",
       "firstName": "Micke",
       "lastName": "guyrra",
-      "companyName": "",
+      "employerName": "",
       "email": "micke@micke.com",
       "password": "Password",
       "id": "NVHqqlWxV8c"
+    },
+    {
+      "role": "individual",
+      "firstName": "loel",
+      "lastName": "tandpetersson",
+      "employerName": "",
+      "email": "loel@mail.com",
+      "password": "Password",
+      "id": "EePjX2jTH2c"
     }
   ],
   "jobs": [
@@ -51,88 +69,78 @@
       "title": "Junior Systemutvecklare",
       "description": "Vi söker dig som kan googla felmeddelanden snabbare än våra seniorer. Hos oss får du arbeta med modern teknik, gamla buggar och möten som kunde varit ett mejl. Perfekt för dig som vill upptäcka att programmering består av cirka 20 % kod och 80 % felsökning.",
       "id": "bN0kWnj52h",
-      "type": "Jobb",
-      "companyId": "b7i4ow5fxr",
-      "iamgeFileName": "NordicTech.webp"
-    },
-    {
-      "title": "Junior Systemutvecklare",
-      "description": "",
-      "id": "bN0kWnj52g",
-      "type": "Jobb",
-      "companyId": "b7i4ow5fxr",
+      "employerId": "b7i4ow5fxr",
+      "companyName": "NordicTech Solutions",
       "iamgeFileName": "NordicTech.webp"
     },
     {
       "title": "Jobb inom café och service",
       "description": "Gillar du kaffe, bakverk och att låtsas vara morgonpigg? Då kan detta vara platsen för dig. Du får lära dig kundbemötande, kassahantering och konsten att le även när någon beställer en havrelatte med exakt 43 graders temperatur.",
       "id": "zoBk3s52h",
-      "type": "PRAO",
-      "companyId": "",
+      "employerId": "HKeZTE7QMm",
+      "companyName": "Smultronstället Café & Konditori",
       "iamgeFileName": "SmultronStallet.webp"
     },
     {
       "title": "Trädgårdsjobb – Gräs växer inte av sig själv",
       "description": "Vill du arbeta utomhus istället för att stirra på en skärm hela dagen? Hos oss får du plantera, beskära och upptäcka att ogräs har en arbetsmoral som få människor kan matcha.",
       "id": "vRR76vaiOK",
-      "type": "LIA",
-      "companyId": "",
+      "employerId": "HKeZTE7QMm",
+      "companyName": "GreenFuture Landscaping",
       "iamgeFileName": "greenFuture.webp"
     },
     {
       "title": "Lager- och logistikjobb",
       "description": "Tycker du om ordning, struktur och att flytta saker från punkt A till punkt B? Då kommer du passa perfekt hos oss. Vi erbjuder en fartfylld miljö där paket ibland verkar teleportera sig till helt fel hylla.",
       "id": "CSQjhNBiFH",
-      "type": "PRAO",
-      "companyId": "",
+      "employerId": "HKeZTE7QMm",
+      "companyName": "ScanLogistik",
       "iamgeFileName": "ScanLogistik.webp"
     },
     {
       "title": "Arbeta inom marknadsföring och design",
       "description": "Vi söker dig som har idéer, kreativitet och minst tre åsikter om typsnitt. Här får du skapa innehåll, designa kampanjer och lära dig varför kunden alltid vill ha logotypen lite större",
       "id": "jJdY53LFbD",
-      "type": "LIA",
-      "companyId": "",
+      "employerId": "HKeZTE7QMm",
+      "companyName": "Kreativa Byrån",
       "iamgeFileName": "kreativaByrån.webp"
     }
   ],
   "bookmarkedJobs": [
     {
-      "jobId": "zoBk3s52h",
-      "userId": "_tAV4UpgdAo",
-      "id": "U4VHasdassdFiPZH5Y"
-    },
-    {
       "userId": "_tAV4UpgdAo",
       "jobId": "bN0kWnj52h",
-      "id": "RliG8lTI5Po"
-    },
-    {
-      "userId": "_tAV4UpgdAo",
-      "jobId": "jJdY53LFbD",
-      "id": "_oNTNcE2NHQ"
-    },
-    {
-      "userId": "_tAV4UpgdAo",
-      "jobId": "bN0kWnj52h",
-      "id": "f68FYm7pUJY"
-    },
-    {
-      "userId": "_tAV4UpgdAo",
-      "jobId": "bN0kWnj52h",
-      "id": "7BFJBixgcRc"
+      "id": "dMkQlwQvgQc"
     }
   ],
-  "userSavedJobs2": [
+  "jobApplications": [
     {
-      "jobId": "zoBk3s52h",
       "userId": "_tAV4UpgdAo",
-      "id": "U4VHasdassdFiPZH5Y"
+      "jobId": "bN0kWnj52h",
+      "letter": "asdfsdfsdf",
+      "createdAt": "2026-06-29T13:51:12.936Z",
+      "id": "y3GpwKlAjXo"
     },
     {
-      "jobId": "bN0kWnj52h",
       "userId": "_tAV4UpgdAo",
-      "id": "PgpQ1JYUZ5o"
+      "jobId": "CSQjhNBiFH",
+      "letter": "sdfasdgfsdagsdfsad",
+      "createdAt": "2026-06-29T14:02:55.938Z",
+      "id": "F1rYoEgpNF8"
+    },
+    {
+      "userId": "_tAV4UpgdAo",
+      "jobId": "bN0kWnj52h",
+      "letter": "Tralallallaja",
+      "createdAt": "2026-06-29T19:22:19.642Z",
+      "id": "mwjq7HYXYso"
+    },
+    {
+      "userId": "_tAV4UpgdAo",
+      "jobId": "CSQjhNBiFH",
+      "letter": "Xmdldkjdnf",
+      "createdAt": "2026-06-29T19:23:41.800Z",
+      "id": "k1abAxBC-Ks"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

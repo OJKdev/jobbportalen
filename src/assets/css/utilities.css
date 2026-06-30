@@ -18,7 +18,7 @@
 }
 
 .btn-rounded {
-  max-width: 400px;
+  max-width: 300px;
   border: solid 1px var(--primary-border-color);
   border-radius: 0.8rem;
 }

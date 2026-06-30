@@ -11,12 +11,11 @@ const initApp = () => {
   new Navbar();
 
   if (!userId) {
-    console.log(" INTE inloggad");
     location.href = "/pages/users/login.html";
-  } else {
-    console.log("Inloggad");
-    loadUser();
+    return;
   }
+
+  loadUser();
 };
 
 const loadUser = async () => {
@@ -27,11 +26,12 @@ const loadUser = async () => {
 
   if (user.role === "individual") {
     await displayUserInfo(user);
-    await displayBoomarkedJobs(user);
+    await displayBoomarkedJobs();
+    await displayJobApplications();
   }
 
-  if (user.role === "company") {
-    displayCompanyInfo(user);
+  if (user.role === "employer") {
+    displayemployerInfo(user);
   }
 };
 
@@ -46,12 +46,60 @@ const displayUserInfo = async (user) => {
 
 const displayBoomarkedJobs = async () => {
   const service = new jobsServices();
-
   const bookmarkedJobs = await service.getBookmarkedJobs();
+  //TODO: Hitta en bättre lösning på detta?
   const bookmarkedJobsIds = await service.getBookmarkedJobIds();
 
   new JobList("Sparade Jobb", ".content", bookmarkedJobs, bookmarkedJobsIds, "Du har inga sparade jobb...");
   service.handleButtons();
+};
+
+const displayJobApplications = async () => {
+  const service = new jobsServices();
+  const applicationClient = new DataClient("jobApplications?userId=" + userId);
+  const applications = await applicationClient.listAll();
+  //TODO: Hitta en bättre lösning på detta? skapa services för att hämta DTOer med all info typ
+  const appliedJobs = [];
+  for (const jobApp of applications) {
+    const job = await service.getJob(jobApp.jobId);
+
+    appliedJobs.push({
+      ...job,
+      jobApp,
+    });
+  }
+  console.log(appliedJobs);
+
+  const userClient = new DataClient("users");
+  const users = await userClient.listAll();
+
+  console.log(applications);
+  let html = "<h2>Mina Ansökningar</h2>";
+
+  if (applications && applications.length > 0) {
+    applications.map((jobApp) => {
+      const job = appliedJobs.find((job) => job.id === jobApp.jobId);
+
+      let employerName = "";
+      const employer = users.find((user) => user.id === job.employerId);
+      if (employer) employerName = employer.employerName;
+
+      html += /*html*/ `
+              <section class="job-applicaiton">
+              <h3> ${job.title}</h3>
+              <p>Företag: ${job.companyName}</p>
+              <p>Arbetsgivare: ${employerName}</p>
+              <p>Du ansökte: ${new Date(jobApp.createdAt).toLocaleString("sv-SE")}</p>
+              <p>Personligt Brev: ${jobApp.letter}</p>
+            </section>
+
+  `;
+    });
+  } else {
+    html = /*html*/ `<p>Inga ansökningar än...</p>`;
+  }
+
+  document.querySelector(".content").insertAdjacentHTML("afterbegin", html);
 };
 
 const logout = () => {

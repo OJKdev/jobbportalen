@@ -28,7 +28,8 @@
   --primary-border-color: #d7d7d7;
   --button-text-color: #f1f1f1;
   --link-color: #16697a;
-  --alert-color: rgba(255, 0, 0, 0.3);
+  --error-color: rgba(255, 0, 0, 0.3);
+  --success-color: rgb(0, 148, 30);
   --max-width: 992px;
 
   --shadow:
@@ -86,15 +87,13 @@ form {
   align-items: center;
 
   padding: 1.5rem 1rem;
-}
-
-form button {
-  max-width: 400px;
+  box-shadow: var(--shadow);
+  border-radius: 0.8rem;
 }
 
 /* Animerad placeholder */
 form .form-controls {
-  width: 400px;
+  min-width: 300px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -104,7 +103,7 @@ form .form-controls {
 }
 
 form .form-radio {
-  width: 400px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,5 +143,15 @@ form input:focus + label {
 }
 
 .form-controls input:focus:invalid {
-  border-bottom: solid 2px var(--alert-color);
+  border-bottom: solid 2px var(--error-color);
+}
+
+.message {
+  padding: 1rem;
+
+  border: 1px solid var(--error-color);
+  border-radius: 0.8rem;
+  margin: 1rem;
+  display: none;
+  text-align: center;
 }

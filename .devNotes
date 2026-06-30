@@ -3,7 +3,11 @@
     [] profil-sida anpassad efter roll
 
 [] arbetsgivare - skapa jobb annons
-[] sökande - fylla i forumlär för att söka
+[] arbetsgivare - se alla anökningar
+
+
+[x] sökande - fylla i forumlär för att söka
+[] sökande - lista alla anökningar
 
 [x] lista alla jobb
 [x] sida för att visa enskilt jobb
@@ -16,6 +20,7 @@
     [x] återanvändbar ES6 Modul för alla bookmark-knappar
 
 [x] dirigerad till login när man försöker bokmärka jobb utloggad
+[x] dirigerad till login när man försöker ansöka till ett jobb utloggad
 
 
 [] js för att validera fält iställetför css
@@ -26,12 +31,21 @@
 
 
 [x] Refaktorisera html css js så att alla sidor med pagegrid layout byggs upp på samma sätt
-[]
-[]
+[] skapa en egen sida för att lista ans;kningar som funkar både för arbetsgivare och sökande
+    [x] döp om rollen company till employer 
+    [] döp om rollen individual till employee 
 
 
-Hittills beröknad nedlagd tid från 17-26 Juni - ca 40h
+[] gör så att man loggar in så stämmer den av epostadressen med toLowerCase
+
+
+
+Hittills beräknad nedlagd tid från 17-26 Juni - ca 40h
 forts'tter räkna nedan...
-27 juni: 2h
-28 juni 4h, 
+27 juni: 2h - totalt ca 42h
+28 juni 4h, - totalt ca 46h
+29 juni 6h, totalt ca 52h
+30 juni 9.30 - 
+
+
 

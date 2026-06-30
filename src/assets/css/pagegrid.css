@@ -4,11 +4,6 @@ article {
 }
 
 aside ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
   list-style: none;
 }
 
@@ -16,6 +11,10 @@ aside {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--primary-border-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 aside img {
@@ -55,10 +54,14 @@ aside img {
     padding-bottom: 0;
     margin-bottom: 0;
     border-bottom: 0;
+    display: block;
+
+    padding-left: 1rem;
   }
   aside ul {
-    display: block;
     list-style: none;
-    padding-left: 1rem;
+  }
+  p {
+    margin-right: 1rem;
   }
 }

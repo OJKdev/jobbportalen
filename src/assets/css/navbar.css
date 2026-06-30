@@ -54,6 +54,7 @@ nav ul li.menu-item {
 
 nav ul li.menu-item a {
   font-weight: 600;
+  font-size: 1.2rem;
 }
 
 /* Visa dropdown menyn */
@@ -144,6 +145,10 @@ nav ul li .menu-btn:checked ~ .menu-icon .nav-icon:after {
   nav ul li.menu-item {
     display: block;
     width: auto;
+  }
+  nav ul li.menu-item a {
+    font-weight: 600;
+    font-size: 1rem;
   }
 
   nav ul li.logo {

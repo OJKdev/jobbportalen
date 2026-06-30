@@ -16,3 +16,9 @@
 #jobs {
   margin-bottom: 1rem;
 }
+
+.job-applicaiton {
+  padding: 1rem;
+  border-bottom: 1px solid var(--primary-border-color);
+  margin-right: 1rem;
+}
