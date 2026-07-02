@@ -1,5 +1,6 @@
 export default class Navbar {
   constructor() {
+    this.role = localStorage.getItem("role");
     const navbar = this.#createNavbar();
     document.querySelector("header").insertAdjacentHTML("afterbegin", navbar);
   }
@@ -24,14 +25,13 @@ export default class Navbar {
             </li>
             
             <li class="menu-item">
-                <a href="/pages/jobs/jobs.html">Lediga jobb</a>
+                ${
+                  this.role === "employer"
+                    ? `<a href="/pages/jobs/create-job-form.html">Skapa annons</a>`
+                    : `<a href="/pages/jobs/jobs.html">Lediga jobb</a>`
+                }
             </li>
-            <li class="menu-item">
-                <a href="/pages/about/about.html">Om oss</a>
-            </li>
-            <li class="menu-item">
-                <a href="/pages/about/about.html">Kontakt</a>
-            </li>
+           
             
             <li class="menu-item">
                 <a href="/pages/users/profile.html"><i class="fa-light fa-circle-user"></i></a>

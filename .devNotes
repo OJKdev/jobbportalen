@@ -1,13 +1,15 @@
 [x] skapa anvädare 
     [x] välja roller, sökande eller arbetsgivare
-    [] profil-sida anpassad efter roll
+    [x] profil-sida anpassad efter roll
 
-[] arbetsgivare - skapa jobb annons
+[x] arbetsgivare - skapa jobb annons
+[x] arbetsgivare - se alla egna jobb annonser
 [] arbetsgivare - se alla anökningar
+[] arbetsgivare sak inte kunna se lediga job/söka jobb
 
 
 [x] sökande - fylla i forumlär för att söka
-[] sökande - lista alla anökningar
+[x] sökande - lista alla anökningar
 
 [x] lista alla jobb
 [x] sida för att visa enskilt jobb
@@ -26,18 +28,22 @@
 [] js för att validera fält iställetför css
 [] inte kunna skapa användare med samma epost som redan finns
 [] skapa en footer modul
-[] 
-[]
+
 
 
 [x] Refaktorisera html css js så att alla sidor med pagegrid layout byggs upp på samma sätt
-[] skapa en egen sida för att lista ans;kningar som funkar både för arbetsgivare och sökande
-    [x] döp om rollen company till employer 
-    [] döp om rollen individual till employee 
+[] skapa en egen sida för att lista ansökningar som funkar både för arbetsgivare och sökande
+
+[x] döp om rollen company till employer 
+[x] döp om rollen individual till employee 
 
 
-[] gör så att man loggar in så stämmer den av epostadressen med toLowerCase
+[x] gör så att man loggar in/registrear så blir alltid username lowercase
 
+[] städa upp kod, försöka få¨bort duplicerad kod
+[] städa upp todos och clgs
+
+[] byta håll på pagegrid så aside är på vänster sida istället
 
 
 Hittills beräknad nedlagd tid från 17-26 Juni - ca 40h
@@ -45,7 +51,9 @@ forts'tter räkna nedan...
 27 juni: 2h - totalt ca 42h
 28 juni 4h, - totalt ca 46h
 29 juni 6h, totalt ca 52h
-30 juni 9.30 - 
+30 juni 4h, totalt ca 56h
+
+1 Juli 8h, totalt ca 64h
 
 
 

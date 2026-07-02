@@ -1,10 +1,11 @@
 import DataClient from "./data-client.js";
 
-export default class JobsServices {
+export default class Services {
   constructor() {
     this.userId = localStorage.getItem("user");
     this.quedBookmark = localStorage.getItem("quedBookmark");
     this.quedJobApplication = localStorage.getItem("quedJobApplication");
+    this.role = localStorage.getItem("role");
 
     if (this.userId && this.quedBookmark) {
       this.bookmarkJob(this.quedBookmark);
@@ -60,6 +61,19 @@ export default class JobsServices {
     return jobs.filter((job) => bookMarkedjobIds.includes(job.id));
   }
 
+  async getEmployersJobs(employerId) {
+    let employersJobsClient;
+    if (employer) {
+      employersJobsClient = new DataClient("jobs?employerId=" + employerId);
+    } else {
+      employersJobsClient = new DataClient("jobs?employerId=" + this.userId);
+    }
+
+    const employersJobs = await employersJobsClient.listAll();
+
+    return employersJobs;
+  }
+
   async getBookmarkedJobIds() {
     const bookMarkedJobs = await this.getBookmarkedJobs();
     console.log();
@@ -91,6 +105,63 @@ export default class JobsServices {
     return job;
   }
 
+  async getEmployeeApplications(user) {
+    const applicationsClient = new DataClient("jobApplications?employeeId=" + user.id);
+    const applications = await applicationsClient.listAll();
+
+    const jobsClient = new DataClient("jobs");
+    const jobs = await jobsClient.listAll();
+
+    const employersClient = new DataClient("users");
+    const employers = await employersClient.listAll();
+
+    let employeeApplications;
+    return applications.map((app) => {
+      const job = jobs.find((job) => job.id === app.jobId);
+
+      const employer = employers.find((emp) => emp.id === job.employerId);
+      console.log(employer);
+
+      return {
+        application: app,
+        job: job,
+        employer: employer,
+      };
+    });
+  }
+
+  async getEmployerApplications(user) {
+    const jobsClient = new DataClient("jobs?employerId=" + user.id);
+    const jobs = await jobsClient.listAll();
+    console.log(jobs);
+
+    const applicationsClient = new DataClient("jobApplications");
+    const applications = await applicationsClient.listAll();
+    console.log(applications);
+
+    const employeesClient = new DataClient("users");
+    const employees = await employeesClient.listAll();
+    console.log(employees);
+
+    return jobs.map((job) => {
+      const jobApplications = applications
+        .filter((app) => app.jobId === job.id)
+        .map((app) => {
+          const employee = employees.find((emp) => emp.id === app.employeeId);
+
+          return {
+            application: app,
+            employee: employee,
+          };
+        });
+
+      return {
+        job: job,
+        applications: jobApplications,
+      };
+    });
+  }
+
   handleButtons() {
     const applyButton = document.querySelector(".apply");
     if (applyButton) {
@@ -100,9 +171,13 @@ export default class JobsServices {
     }
 
     const bookmarkButtons = document.querySelectorAll(".fa-bookmark");
+
     if (bookmarkButtons) {
       bookmarkButtons.forEach((icon) => {
         const button = icon.parentElement;
+        if (this.role === "employer") {
+          button.style.display = "none";
+        }
 
         button.addEventListener("click", async () => {
           const id = button.id;

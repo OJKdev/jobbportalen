@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/55174c58a9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="create-job-form.css" />
+    <script type="module" src="create-job-form.js" defer></script>
+    <title>JobbPortalen | Jobb</title>
+  </head>
+  <body>
+    <header></header>
+    <main class="container">
+      <h1>Skapa annons</h1>
+
+      <article>
+        <aside>
+          <ul>
+            <li>
+              <img src="/assets/images/praktiseaLogo.png" alt="JobbLogo" />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <button id="backBtn" class="btn btn-rounded"><i class="fa-solid fa-arrow-left"></i>Tillbaka...</button>
+            </li>
+          </ul>
+        </aside>
+        <section class="content">
+          <section class="message"></section>
+          <form id="application-form">
+            <div class="form-controls">
+              <input required type="text" name="title" id="title" placeholder=" " />
+              <label for="username">Titel</label>
+            </div>
+            <div class="form-controls">
+              <input required type="text" name="company" id="company" placeholder=" " />
+              <label for="username">Företag</label>
+            </div>
+            <textarea
+              id="description"
+              name="description"
+              rows="15"
+              placeholder="Beskriv tjänsten..."
+              required
+            ></textarea>
+
+            <button id="${id}" type="submit" class="btn btn-rounded">
+              <i class="fa-regular fa-file-lines"></i>
+              Lägg ut annons
+            </button>
+          </form>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

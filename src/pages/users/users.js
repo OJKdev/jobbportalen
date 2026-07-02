@@ -13,8 +13,9 @@ const handleSubmit = async (e) => {
   try {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
+    data.username = data.username.toLowerCase();
     const client = new DataClient("users");
-    const result = await client.add(data);
+    const result = await client.add(userData);
 
     if (result) {
       location.href = "/pages/users/login.html";

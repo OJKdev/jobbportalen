@@ -12,6 +12,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
+  data.username = data.username.toLowerCase();
   const client = new DataClient("users");
   const result = await client.login(data);
 

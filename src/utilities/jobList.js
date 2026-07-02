@@ -12,8 +12,9 @@ export default class JobList {
   }
 
   #createJobList() {
-    let html = /*html*/ `<h2>${this.header}</h2>
-    <div id="jobs">`;
+    let html = /*html*/ `<div id="jobs" class="tab active">
+      <h2>${this.header}</h2>
+    `;
 
     if (this.jobs && this.jobs.length > 0) {
       this.jobs.map(
@@ -38,7 +39,7 @@ export default class JobList {
       html += `</div>`;
       return html;
     } else {
-      return /*html*/ `<p>${this.emptyMessage}</p>`;
+      return (html += /*html*/ `<p>${this.emptyMessage}</p></div>`);
     }
   }
 

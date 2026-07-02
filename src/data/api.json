@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "role": "individual",
+      "role": "employee",
       "firstName": "Arne",
       "lastName": "Karlsson",
       "employerName": "",
@@ -14,7 +14,7 @@
       "firstName": "",
       "lastName": "",
       "employerName": "NordicTech Group AB",
-      "email": "arne@mail.com",
+      "email": "nt@mail.com",
       "password": "Password",
       "id": "b7i4ow5fxr"
     },
@@ -22,46 +22,10 @@
       "role": "employer",
       "firstName": "",
       "lastName": "",
-      "employerName": "Bemannings Portalen",
-      "email": "BemanningsPortalen@mail.com",
+      "employerName": "Bemanningsportalen",
+      "email": "bemanning@mail.com",
       "password": "Password",
       "id": "HKeZTE7QMm"
-    },
-    {
-      "role": "individual",
-      "firstName": "jocke",
-      "lastName": "jcoke",
-      "employerName": "",
-      "email": "jocke@mail.com",
-      "password": "Password",
-      "id": "_tAV4UpgdAo"
-    },
-    {
-      "role": "individual",
-      "firstName": "Micke",
-      "lastName": "Gurra",
-      "employerName": "",
-      "email": "micke@mail.com",
-      "password": "Password",
-      "id": "ezRofsSshOY"
-    },
-    {
-      "role": "individual",
-      "firstName": "Micke",
-      "lastName": "guyrra",
-      "employerName": "",
-      "email": "micke@micke.com",
-      "password": "Password",
-      "id": "NVHqqlWxV8c"
-    },
-    {
-      "role": "individual",
-      "firstName": "loel",
-      "lastName": "tandpetersson",
-      "employerName": "",
-      "email": "loel@mail.com",
-      "password": "Password",
-      "id": "EePjX2jTH2c"
     }
   ],
   "jobs": [
@@ -104,43 +68,37 @@
       "employerId": "HKeZTE7QMm",
       "companyName": "Kreativa Byrån",
       "iamgeFileName": "kreativaByrån.webp"
+    },
+    {
+      "employerId": "b7i4ow5fxr",
+      "title": "Nätverkstekniker",
+      "companyName": "NordicTech Solutions",
+      "description": "Dra i kablar hela dagen, och hoppas på det bästa. ",
+      "iamgeFileName": "praktiseaLogo.png",
+      "id": "wEEgWY802CM"
     }
   ],
   "bookmarkedJobs": [
     {
-      "userId": "_tAV4UpgdAo",
-      "jobId": "bN0kWnj52h",
-      "id": "dMkQlwQvgQc"
+      "userId": "fPpXH9olQDk",
+      "jobId": "zoBk3s52h",
+      "id": "McwbfMFoH5Q"
     }
   ],
   "jobApplications": [
     {
-      "userId": "_tAV4UpgdAo",
+      "employeeId": "fPpXH9olQDk",
       "jobId": "bN0kWnj52h",
-      "letter": "asdfsdfsdf",
-      "createdAt": "2026-06-29T13:51:12.936Z",
-      "id": "y3GpwKlAjXo"
+      "letter": "Jag vill gärna ha jobbet tack....",
+      "createdAt": "2026-07-01T19:43:25.490Z",
+      "id": "Qb8sM0MFfXg"
     },
     {
-      "userId": "_tAV4UpgdAo",
-      "jobId": "CSQjhNBiFH",
-      "letter": "sdfasdgfsdagsdfsad",
-      "createdAt": "2026-06-29T14:02:55.938Z",
-      "id": "F1rYoEgpNF8"
-    },
-    {
-      "userId": "_tAV4UpgdAo",
+      "employeeId": "fPpXH9olQDk",
       "jobId": "bN0kWnj52h",
-      "letter": "Tralallallaja",
-      "createdAt": "2026-06-29T19:22:19.642Z",
-      "id": "mwjq7HYXYso"
-    },
-    {
-      "userId": "_tAV4UpgdAo",
-      "jobId": "CSQjhNBiFH",
-      "letter": "Xmdldkjdnf",
-      "createdAt": "2026-06-29T19:23:41.800Z",
-      "id": "k1abAxBC-Ks"
+      "letter": "Här med söker jag jobbet....",
+      "createdAt": "2026-07-02T07:19:17.942Z",
+      "id": "IV4EKhmTA7o"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

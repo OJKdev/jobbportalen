@@ -18,8 +18,8 @@ input[type="radio"] {
   display: none;
 }
 
-form:has(#individual:checked) #firstName-field,
-form:has(#individual:checked) #lastName-field {
+form:has(#employee:checked) #firstName-field,
+form:has(#employee:checked) #lastName-field {
   display: block;
 }
 

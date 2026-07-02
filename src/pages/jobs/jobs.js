@@ -1,13 +1,14 @@
 import Navbar from "../../utilities/menu.js";
 import DataClient from "../../utilities/data-client.js";
 import JobList from "../../utilities/jobList.js";
-import jobsServices from "../../utilities/jobServices.js";
+import Services from "../../utilities/services.js";
 import SearchBar from "../../utilities/searchbar.js";
 
 const userId = localStorage.getItem("user");
 let search;
 let headerTitle = "";
 const jobs = undefined;
+const services = new Services();
 
 const initApp = () => {
   new Navbar();
@@ -25,8 +26,7 @@ const initApp = () => {
 };
 
 const displayJobs = async () => {
-  const service = new jobsServices();
-  let listJobs = await service.listJobs();
+  let listJobs = await services.listJobs();
 
   if (search) {
     listJobs = listJobs.filter(
@@ -37,10 +37,10 @@ const displayJobs = async () => {
     );
   }
 
-  const bookmarkedJobsIds = await service.getBookmarkedJobIds();
+  const bookmarkedJobsIds = await services.getBookmarkedJobIds();
 
   new JobList(headerTitle, ".content", listJobs, bookmarkedJobsIds, "Kunde inte hitta några jobb...");
-  service.handleButtons();
+  services.handleButtons();
 };
 
 initApp();
