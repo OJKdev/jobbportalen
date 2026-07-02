@@ -5,7 +5,6 @@ import Services from "../../utilities/services.js";
 
 const form = document.querySelector("form");
 const userId = localStorage.getItem("user");
-const message = document.querySelector(".message");
 const services = new Services();
 const role = localStorage.getItem("role");
 
@@ -13,21 +12,29 @@ let jobId;
 
 const initApp = async () => {
   new Navbar();
-  if (role !== "employee") {
-    document.querySelector(".message").insertAdjacentHTML("afterbegin", "<p>Du m[ste vara inloggad med rätt roll</p>");
-    message.style.display = "block";
+  if (!userId || role === "employer") {
+    location.href = "/pages/users/profile.html";
     return;
   }
 
   jobId = location.search.split("=")[1];
-  console.log(jobId);
+
   if (!jobId) return;
 
-  await displayJob(jobId);
+  const displayJobs = await displayJob(jobId);
+  if (displayJobs) {
+    const backBtn = document.querySelector("#backBtn");
+    backBtn.addEventListener("click", handleBackBtn);
+  }
 };
 
 const displayJob = async (id) => {
   const job = await services.getJob(id);
+  if (!job) {
+    services.showMessage("Kunde inte hitta detta jobb...", "error");
+    form.style.display = "none";
+    return;
+  }
 
   let employerName = "";
   if (job.employerId) {
@@ -73,7 +80,6 @@ const handleSubmit = async (e) => {
 
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-  console.log(data);
   const client = new DataClient("jobApplications");
   const result = await client.add({
     employeeId: userId,
@@ -81,12 +87,13 @@ const handleSubmit = async (e) => {
     letter: data.letter,
     createdAt: new Date().toISOString(),
   });
-  console.log(result);
   if (result) {
     form.style.display = "none";
-    message.style.display = "block";
-    message.innerHTML = /*html*/ `
-      <h3>Tack för din ansökan!</h3> <p><a href="/pages/users/profile.html">Min Profil</a></p>`;
+    services.showMessage(
+      `
+      <h3>Tack för din ansökan!</h3> <p><a href="/pages/users/profile.html">Min Profil</a></p>`,
+      "success",
+    );
   }
 };
 

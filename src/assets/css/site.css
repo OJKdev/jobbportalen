@@ -1,5 +1,6 @@
 @import "./navbar.css";
 @import "./utilities.css";
+@import "./searchBar.css";
 
 @font-face {
   font-family: "Chillax";
@@ -141,6 +142,10 @@ form input:valid {
 form input:focus + label {
   display: none;
 }
+form input:focus + label,
+form input:valid + label {
+  display: none;
+}
 
 .form-controls input:focus:invalid {
   border-bottom: solid 2px var(--error-color);
@@ -148,10 +153,15 @@ form input:focus + label {
 
 .message {
   padding: 1rem;
-
-  border: 1px solid var(--error-color);
+  border: 1px solid var(--primary-border-color);
   border-radius: 0.8rem;
   margin: 1rem;
   display: none;
   text-align: center;
+}
+.error {
+  border: 1px solid var(--error-color);
+}
+.success {
+  border: 1px solid var(--success-color);
 }

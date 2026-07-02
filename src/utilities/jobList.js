@@ -4,7 +4,6 @@ export default class JobList {
     this.jobs = selectedJobs;
     this.emptyMessage = emptyMessage;
     this.bookMarkedJobIds = bookMarkedJobIds;
-    console.log(this.bookMarkedJobIds);
 
     const jobList = this.#createJobList();
 

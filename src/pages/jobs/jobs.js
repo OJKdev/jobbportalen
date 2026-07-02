@@ -7,7 +7,6 @@ import SearchBar from "../../utilities/searchbar.js";
 const userId = localStorage.getItem("user");
 let search;
 let headerTitle = "";
-const jobs = undefined;
 const services = new Services();
 
 const initApp = () => {

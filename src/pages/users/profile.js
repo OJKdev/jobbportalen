@@ -5,7 +5,7 @@ import Services from "../../utilities/services.js";
 
 const userId = localStorage.getItem("user");
 const logoutBtn = document.querySelector("#logout");
-const jobs = undefined;
+
 const services = new Services();
 
 const initApp = () => {
@@ -21,20 +21,26 @@ const initApp = () => {
 const loadUser = async () => {
   const client = new DataClient("users");
   const user = await client.findById(userId);
+  if (!user) {
+    services.showMessage("Kunde inte hitta användaren.", "error");
+    return;
+  }
 
   if (user.role === "employee") {
     localStorage.setItem("role", "employee");
+
     await displayBoomarkedJobs();
     await displayEmployeeJobApplications(user);
   }
 
   if (user.role === "employer") {
     localStorage.setItem("role", "employer");
-    const jobs = await services.getEmployerApplications(user);
-    console.log(jobs);
+
+    const jobs = await services.getEmployerJobs(user);
+    const applications = await services.getEmployersApplications(jobs);
 
     await displayEmployersJobs(jobs);
-    await displayAppliedJobs(jobs);
+    await displayAppliedJobs(applications);
   }
 
   renderAside(user);
@@ -89,6 +95,32 @@ const displayEmployersJobs = async (jobs) => {
               <h3> ${jobs.job.title}</h3>
               <p>Företag: ${jobs.job.companyName}</p>
               <p>Antal ansökningar: ${jobs.applications.length}</p>
+              <p><a href="/pages/jobs/create-job-form.html?id=${jobs.job.id}">Redigera detta jobb</a></p>
+
+            </section>
+
+  `;
+    });
+  } else {
+    html += /*html*/ `<p>Inga annonser än...</p>`;
+  }
+  html += `</div>`;
+
+  document.querySelector(".content").insertAdjacentHTML("afterbegin", html);
+};
+const displayAppliedJobs = async (applications) => {
+  let html = /*html*/ `<div id="applications" class="tab">
+    <h2>Mottagna Ansökningar</h2>
+  `;
+
+  if (applications && applications.length > 0) {
+    applications.forEach((jobApp) => {
+      html += /*html*/ `
+              <section class="data-entry">
+              <h3> ${jobApp.job.title}</h3>
+              <p>Sökande: ${jobApp.employee.firstName} ${jobApp.employee.lastName}</p>
+              <p>Inkom : ${new Date(jobApp.application.createdAt).toLocaleString("sv-SE")}</p>
+              <p>Personligt brev: ${jobApp.application.letter}</p>
             </section>
 
   `;
@@ -98,16 +130,6 @@ const displayEmployersJobs = async (jobs) => {
   }
   html += `</div>`;
 
-  document.querySelector(".content").insertAdjacentHTML("afterbegin", html);
-};
-const displayAppliedJobs = async (jobs) => {
-  let html = /*html*/ `<div id="applications" class="tab">
-    <h2>Inkomna ansöknigar</h2>
-  
-    <p>Under konstruktion...</p>
-   
-    </div>
-  `;
   document.querySelector(".content").insertAdjacentHTML("afterbegin", html);
 };
 
@@ -126,7 +148,9 @@ const renderAside = (user) => {
           user.role === "employer"
             ? /*html*/ `
           <li> 
-           <p> <a href="/pages/jobs/create-job-form.html">Skapa annons</a><p>
+           <button class="btn btn-rounded create">
+            Skapa annons
+            </button>
         </li>
         `
             : ``
@@ -154,12 +178,17 @@ const renderAside = (user) => {
 };
 
 const handleTabButtons = () => {
+  const createJobBtn = document.querySelector(".create");
+  if (createJobBtn) {
+    createJobBtn.addEventListener("click", handleCreateJob);
+  }
+
   const tabs = document.querySelectorAll(".tab");
+
   const tabButtons = document.querySelectorAll(".tabBtn");
   tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const selectedTab = button.dataset.tab;
-      console.log(button.dataset.tab);
 
       tabButtons.forEach((btn) => btn.classList.remove("active"));
       tabs.forEach((panel) => panel.classList.remove("active"));
@@ -169,10 +198,14 @@ const handleTabButtons = () => {
     });
   });
 };
+const handleCreateJob = () => {
+  location.href = "/pages/jobs/create-job-form.html";
+};
 
 const logout = () => {
   localStorage.removeItem("user");
   localStorage.removeItem("role");
+  localStorage.removeItem("returnLocation");
   location.href = "/";
 };
 

@@ -10,16 +10,22 @@ const initApp = async () => {
   new Navbar();
 
   const id = location.search.split("=")[1];
-  console.log(id);
   if (!id) return;
 
-  await displayJob(id);
-  const backBtn = document.querySelector("#backBtn");
-  backBtn.addEventListener("click", handleBackBtn);
+  const displayJobs = await displayJob(id);
+  if (displayJobs) {
+    const backBtn = document.querySelector("#backBtn");
+    backBtn.addEventListener("click", handleBackBtn);
+  }
 };
 
 const displayJob = async (id) => {
   const job = await services.getJob(id);
+  if (!job) {
+    services.showMessage("Kunde inte hitta detta jobb...", "error");
+
+    return;
+  }
 
   let employerName = "";
   if (job.employerId) {
@@ -70,12 +76,12 @@ const displayJob = async (id) => {
                   
                 <ul>
   `;
-  console.log(job.id);
   document.querySelector("h1").insertAdjacentHTML("afterbegin", h1Html);
   document.querySelector(".content").insertAdjacentHTML("afterbegin", contentHtml);
   document.querySelector("aside").insertAdjacentHTML("afterbegin", asideHtml);
 
   services.handleButtons();
+  return true;
 };
 
 initApp();

@@ -1,17 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/55174c58a9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="users.css" />
-    <script type="module" src="users.js" defer></script>
+    <script type="module" src="register.js" defer></script>
     <title>JobbPortalen | Registrering</title>
   </head>
   <body>
     <header></header>
     <main class="container">
       <h1>Skapa konto</h1>
+      <section class="message"></section>
       <form>
         <div class="form-radio">
           <input type="radio" id="employee" name="role" value="employee" checked />
@@ -23,11 +24,11 @@
         </div>
 
         <div class="form-controls" id="firstName-field">
-          <input type="text" name="firstName" id="firstName" />
+          <input required="text" name="firstName" id="firstName" />
           <label for="firstName">Förnamn</label>
         </div>
         <div class="form-controls" id="lastName-field">
-          <input type="text" name="lastName" id="lastName" />
+          <input required type="text" name="lastName" id="lastName" />
           <label for="lastName">Efternamn</label>
         </div>
         <div class="form-controls" id="employerName-field">
@@ -36,7 +37,7 @@
         </div>
 
         <div class="form-controls">
-          <input required type="email" name="email" id="email" />
+          <input required type="text" name="email" id="email" />
           <label for="email">E-Post</label>
         </div>
         <div class="form-controls">

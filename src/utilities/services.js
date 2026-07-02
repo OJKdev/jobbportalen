@@ -28,9 +28,7 @@ export default class Services {
       location.href = "/pages/users/login.html";
       return;
     }
-    console.log("sparar jobb", jobId);
     const client = new DataClient("bookmarkedJobs");
-    console.log(this.userId);
     await client.add({
       userId: this.userId,
       jobId: jobId,
@@ -38,22 +36,17 @@ export default class Services {
   }
 
   async unBookmarkJob(jobId) {
-    console.log("tar bort sparad jobb", jobId);
     const client = new DataClient("bookmarkedJobs");
     const bookMarkedJobs = await client.listAll();
     const jobToUnBookMark = bookMarkedJobs.find((job) => job.jobId === jobId);
-    console.log(jobToUnBookMark);
     await client.removeById(jobToUnBookMark.id);
   }
 
-  // TODO: bookmarked jobs kan itne va tillg'ngligt om mna inte 'r inloggad...
   async getBookmarkedJobs() {
     const bookMarkedJobsClient = new DataClient("bookmarkedJobs?userId=" + this.userId);
 
     const bookMarkedJobs = await bookMarkedJobsClient.listAll();
-    console.log(bookMarkedJobs);
     const bookMarkedjobIds = bookMarkedJobs.map((item) => item.jobId);
-    console.log(bookMarkedjobIds);
 
     const jobsClient = new DataClient("jobs");
     const jobs = await jobsClient.listAll();
@@ -62,12 +55,7 @@ export default class Services {
   }
 
   async getEmployersJobs(employerId) {
-    let employersJobsClient;
-    if (employer) {
-      employersJobsClient = new DataClient("jobs?employerId=" + employerId);
-    } else {
-      employersJobsClient = new DataClient("jobs?employerId=" + this.userId);
-    }
+    const employersJobsClient = new DataClient("jobs?employerId=" + employerId);
 
     const employersJobs = await employersJobsClient.listAll();
 
@@ -76,9 +64,7 @@ export default class Services {
 
   async getBookmarkedJobIds() {
     const bookMarkedJobs = await this.getBookmarkedJobs();
-    console.log();
     const jobIds = bookMarkedJobs.map((item) => item.id);
-    console.log(jobIds);
     return jobIds;
   }
 
@@ -120,7 +106,6 @@ export default class Services {
       const job = jobs.find((job) => job.id === app.jobId);
 
       const employer = employers.find((emp) => emp.id === job.employerId);
-      console.log(employer);
 
       return {
         application: app,
@@ -130,18 +115,15 @@ export default class Services {
     });
   }
 
-  async getEmployerApplications(user) {
+  async getEmployerJobs(user) {
     const jobsClient = new DataClient("jobs?employerId=" + user.id);
     const jobs = await jobsClient.listAll();
-    console.log(jobs);
 
     const applicationsClient = new DataClient("jobApplications");
     const applications = await applicationsClient.listAll();
-    console.log(applications);
 
     const employeesClient = new DataClient("users");
     const employees = await employeesClient.listAll();
-    console.log(employees);
 
     return jobs.map((job) => {
       const jobApplications = applications
@@ -162,9 +144,33 @@ export default class Services {
     });
   }
 
+  getEmployersApplications(jobs) {
+    const incomingApplications = jobs.flatMap((item) => {
+      return item.applications.map((app) => {
+        return {
+          job: item.job,
+          application: app.application,
+          employee: app.employee,
+        };
+      });
+    });
+    return incomingApplications;
+  }
+
+  showMessage(message, type) {
+    const msg = document.querySelector(".message");
+    msg.innerHTML = "";
+    msg.insertAdjacentHTML("afterbegin", message);
+    msg.classList.add(type);
+    msg.style.display = "block";
+  }
+
   handleButtons() {
     const applyButton = document.querySelector(".apply");
     if (applyButton) {
+      if (this.role === "employer") {
+        applyButton.style.display = "none";
+      }
       applyButton.addEventListener("click", async (e) => {
         this.applyJob(e.currentTarget.id);
       });
@@ -181,7 +187,6 @@ export default class Services {
 
         button.addEventListener("click", async () => {
           const id = button.id;
-          console.log(id);
 
           if (icon.classList.contains("fa-regular")) {
             await this.bookmarkJob(id);

@@ -31,7 +31,7 @@
   "jobs": [
     {
       "title": "Junior Systemutvecklare",
-      "description": "Vi söker dig som kan googla felmeddelanden snabbare än våra seniorer. Hos oss får du arbeta med modern teknik, gamla buggar och möten som kunde varit ett mejl. Perfekt för dig som vill upptäcka att programmering består av cirka 20 % kod och 80 % felsökning.",
+      "description": "Vi söker dig som kan googla felmeddelanden snabbare än våra seniorer. Hos oss får du arbeta med modern teknik, gamla buggar och möten som kunde varit ett mejl. Perfekt praktikplats för dig som vill upptäcka att programmering består av cirka 20 % kod och 80 % felsökning.",
       "id": "bN0kWnj52h",
       "employerId": "b7i4ow5fxr",
       "companyName": "NordicTech Solutions",
@@ -47,7 +47,7 @@
     },
     {
       "title": "Trädgårdsjobb – Gräs växer inte av sig själv",
-      "description": "Vill du arbeta utomhus istället för att stirra på en skärm hela dagen? Hos oss får du plantera, beskära och upptäcka att ogräs har en arbetsmoral som få människor kan matcha.",
+      "description": "Vill du arbeta utomhus istället för att stirra på en skärm hela dagen? Hos oss får du plantera, beskära och upptäcka att ogräs har en arbetsmoral som få människor kan matcha. yes yedasf fsddsf sdf",
       "id": "vRR76vaiOK",
       "employerId": "HKeZTE7QMm",
       "companyName": "GreenFuture Landscaping",
@@ -68,21 +68,13 @@
       "employerId": "HKeZTE7QMm",
       "companyName": "Kreativa Byrån",
       "iamgeFileName": "kreativaByrån.webp"
-    },
-    {
-      "employerId": "b7i4ow5fxr",
-      "title": "Nätverkstekniker",
-      "companyName": "NordicTech Solutions",
-      "description": "Dra i kablar hela dagen, och hoppas på det bästa. ",
-      "iamgeFileName": "praktiseaLogo.png",
-      "id": "wEEgWY802CM"
     }
   ],
   "bookmarkedJobs": [
     {
       "userId": "fPpXH9olQDk",
-      "jobId": "zoBk3s52h",
-      "id": "McwbfMFoH5Q"
+      "jobId": "bN0kWnj52h",
+      "id": "RSWw_qD5Ffk"
     }
   ],
   "jobApplications": [
@@ -95,7 +87,7 @@
     },
     {
       "employeeId": "fPpXH9olQDk",
-      "jobId": "bN0kWnj52h",
+      "jobId": "zoBk3s52h",
       "letter": "Här med söker jag jobbet....",
       "createdAt": "2026-07-02T07:19:17.942Z",
       "id": "IV4EKhmTA7o"

@@ -4,8 +4,8 @@
 
 [x] arbetsgivare - skapa jobb annons
 [x] arbetsgivare - se alla egna jobb annonser
-[] arbetsgivare - se alla anökningar
-[] arbetsgivare sak inte kunna se lediga job/söka jobb
+[x] arbetsgivare - se alla anökningar
+[x] arbetsgivare sak inte kunna söka jobb
 
 
 [x] sökande - fylla i forumlär för att söka
@@ -25,14 +25,12 @@
 [x] dirigerad till login när man försöker ansöka till ett jobb utloggad
 
 
-[] js för att validera fält iställetför css
-[] inte kunna skapa användare med samma epost som redan finns
-[] skapa en footer modul
+[x] typ js för att validera fält iställetför css
+[x] inte kunna skapa användare med samma epost som redan finns
 
 
 
 [x] Refaktorisera html css js så att alla sidor med pagegrid layout byggs upp på samma sätt
-[] skapa en egen sida för att lista ansökningar som funkar både för arbetsgivare och sökande
 
 [x] döp om rollen company till employer 
 [x] döp om rollen individual till employee 
@@ -40,11 +38,13 @@
 
 [x] gör så att man loggar in/registrear så blir alltid username lowercase
 
-[] städa upp kod, försöka få¨bort duplicerad kod
-[] städa upp todos och clgs
 
-[] byta håll på pagegrid så aside är på vänster sida istället
+[x] byta håll på pagegrid så aside är på vänster sida istället
 
+[x] städa upp todos och clgs
+
+
+[] städa upp kod, finputs. hitta små förbättringar samt försöka få bort duplicerad kod
 
 Hittills beräknad nedlagd tid från 17-26 Juni - ca 40h
 forts'tter räkna nedan...
@@ -54,6 +54,7 @@ forts'tter räkna nedan...
 30 juni 4h, totalt ca 56h
 
 1 Juli 8h, totalt ca 64h
+2 juli 8h, totalt ca 72h
 
 
 

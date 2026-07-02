@@ -6,7 +6,6 @@ export default class DataClient {
 
   constructor(resource) {
     this.#url = `${settings.BASE_API_URL}/${resource}`;
-    console.log(this.#url);
   }
 
   async add(data) {
@@ -97,6 +96,22 @@ export default class DataClient {
         method: "DELETE",
       });
       return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async update(id, data) {
+    try {
+      const response = await fetch(`${this.#url}/${id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      return response.ok;
     } catch (error) {
       console.log(error);
     }

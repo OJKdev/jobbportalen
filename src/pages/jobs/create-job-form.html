@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
     <header></header>
     <main class="container">
       <h1>Skapa annons</h1>
-
+      <section class="message"></section>
       <article>
         <aside>
           <ul>
@@ -27,15 +27,14 @@
           </ul>
         </aside>
         <section class="content">
-          <section class="message"></section>
           <form id="application-form">
             <div class="form-controls">
               <input required type="text" name="title" id="title" placeholder=" " />
-              <label for="username">Titel</label>
+              <label for="title">Titel</label>
             </div>
             <div class="form-controls">
-              <input required type="text" name="company" id="company" placeholder=" " />
-              <label for="username">Företag</label>
+              <input required type="text" name="companyName" id="companyName" placeholder=" " />
+              <label for="companyName">Företag</label>
             </div>
             <textarea
               id="description"
@@ -45,7 +44,7 @@
               required
             ></textarea>
 
-            <button id="${id}" type="submit" class="btn btn-rounded">
+            <button id="submit" type="submit" class="btn btn-rounded">
               <i class="fa-regular fa-file-lines"></i>
               Lägg ut annons
             </button>

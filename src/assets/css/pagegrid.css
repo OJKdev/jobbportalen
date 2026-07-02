@@ -52,6 +52,31 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+form {
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  padding: 0;
+  box-shadow: none;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+  outline: 0 !important;
+  border: 1px solid var(--primary-border-color);
+  font-family: Satoshi;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  form {
+    padding: 0 1rem 1rem 0;
+  }
+}
+
 @media (min-width: 768px) {
   article {
     display: grid;
