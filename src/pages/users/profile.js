@@ -1,7 +1,8 @@
-import Navbar from "../../utilities/menu.js";
+import Header from "../../utilities/header.js";
 import DataClient from "../../utilities/data-client.js";
 import JobList from "../../utilities/jobList.js";
 import Services from "../../utilities/services.js";
+import Footer from "../../utilities/footer.js";
 
 const userId = localStorage.getItem("user");
 const logoutBtn = document.querySelector("#logout");
@@ -15,7 +16,7 @@ const initApp = () => {
   }
 
   loadUser();
-  new Navbar();
+  new Footer();
 };
 
 const loadUser = async () => {
@@ -43,6 +44,7 @@ const loadUser = async () => {
     await displayAppliedJobs(applications);
   }
 
+  new Header();
   renderAside(user);
   handleTabButtons();
 };

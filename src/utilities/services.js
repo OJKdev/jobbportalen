@@ -7,6 +7,10 @@ export default class Services {
     this.quedJobApplication = localStorage.getItem("quedJobApplication");
     this.role = localStorage.getItem("role");
 
+    this.handleLoginRedirection();
+  }
+
+  handleLoginRedirection() {
     if (this.userId && this.quedBookmark) {
       this.bookmarkJob(this.quedBookmark);
       localStorage.removeItem("quedBookmark");
@@ -37,21 +41,27 @@ export default class Services {
 
   async unBookmarkJob(jobId) {
     const client = new DataClient("bookmarkedJobs");
-    const bookMarkedJobs = await client.listAll();
-    const jobToUnBookMark = bookMarkedJobs.find((job) => job.jobId === jobId);
-    await client.removeById(jobToUnBookMark.id);
+    const bookmarkedJobs = await client.listAll();
+    const jobToUnBookmark = bookmarkedJobs.find((job) => job.jobId === jobId);
+    await client.removeById(jobToUnBookmark.id);
   }
 
   async getBookmarkedJobs() {
-    const bookMarkedJobsClient = new DataClient("bookmarkedJobs?userId=" + this.userId);
+    const bookmarkedJobsClient = new DataClient("bookmarkedJobs?userId=" + this.userId);
 
-    const bookMarkedJobs = await bookMarkedJobsClient.listAll();
-    const bookMarkedjobIds = bookMarkedJobs.map((item) => item.jobId);
+    const bookmarkedJobs = await bookmarkedJobsClient.listAll();
+    const bookmarkedjobIds = bookmarkedJobs.map((item) => item.jobId);
 
     const jobsClient = new DataClient("jobs");
     const jobs = await jobsClient.listAll();
 
-    return jobs.filter((job) => bookMarkedjobIds.includes(job.id));
+    return jobs.filter((job) => bookmarkedjobIds.includes(job.id));
+  }
+
+  async getBookmarkedJobIds() {
+    const bookmarkedJobs = await this.getBookmarkedJobs();
+    const jobIds = bookmarkedJobs.map((item) => item.id);
+    return jobIds;
   }
 
   async getEmployersJobs(employerId) {
@@ -60,12 +70,6 @@ export default class Services {
     const employersJobs = await employersJobsClient.listAll();
 
     return employersJobs;
-  }
-
-  async getBookmarkedJobIds() {
-    const bookMarkedJobs = await this.getBookmarkedJobs();
-    const jobIds = bookMarkedJobs.map((item) => item.id);
-    return jobIds;
   }
 
   applyJob(id) {
@@ -101,11 +105,13 @@ export default class Services {
     const employersClient = new DataClient("users");
     const employers = await employersClient.listAll();
 
-    let employeeApplications;
     return applications.map((app) => {
       const job = jobs.find((job) => job.id === app.jobId);
 
       const employer = employers.find((emp) => emp.id === job.employerId);
+      if (!employer) {
+        return null;
+      }
 
       return {
         application: app,

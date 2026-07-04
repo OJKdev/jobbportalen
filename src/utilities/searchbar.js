@@ -19,6 +19,11 @@ export default class SearchBar {
     return html;
   }
 
+  hasSearchParams() {
+    const search = location.search.split("search=")[1];
+    return search;
+  }
+
   async handleSearch(e) {
     e.preventDefault();
     const formData = new FormData(e.target);

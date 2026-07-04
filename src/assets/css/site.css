@@ -1,6 +1,7 @@
-@import "./navbar.css";
+@import "./header.css";
 @import "./utilities.css";
 @import "./searchBar.css";
+@import "./footer.css";
 
 @font-face {
   font-family: "Chillax";
@@ -53,16 +54,24 @@
 
   gap: 1rem;
 }
+html,
+body {
+  min-height: 100%;
+}
 
 body {
+  min-height: 100%;
   width: 100vw;
   height: 100vh;
   font-family: "Satoshi", sans-serif;
   background-color: var(--primary-color);
   color: var(--text-color);
+  display: flex;
+  flex-direction: column;
 }
 
 main {
+  flex: 1;
   padding: 7rem 2rem;
 }
 

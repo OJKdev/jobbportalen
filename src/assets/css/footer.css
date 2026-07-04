@@ -1,0 +1,52 @@
+footer {
+  margin-top: 2rem;
+  padding: 1rem 1rem;
+  background-color: var(--text-color);
+  color: var(--button-text-color);
+}
+
+footer .footer-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+footer .logotype {
+  max-width: 3rem;
+  height: auto;
+}
+
+footer h5 {
+  font-family: "Chillax", sans-serif;
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+footer nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+footer a {
+  color: var(--button-text-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--secondary-color);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}

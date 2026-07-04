@@ -1,13 +1,14 @@
-import Navbar from "../../utilities/menu.js";
+import Header from "../../utilities/header.js";
 import DataClient from "../../utilities/data-client.js";
 import JobList from "../../utilities/jobList.js";
 import Services from "../../utilities/services.js";
+import Footer from "../../utilities/footer.js";
 
 const userId = localStorage.getItem("user");
 const services = new Services();
 
 const initApp = async () => {
-  new Navbar();
+  new Header();
 
   const id = location.search.split("=")[1];
   if (!id) return;
@@ -16,6 +17,7 @@ const initApp = async () => {
   if (displayJobs) {
     const backBtn = document.querySelector("#backBtn");
     backBtn.addEventListener("click", handleBackBtn);
+    new Footer();
   }
 };
 

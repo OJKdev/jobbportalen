@@ -1,7 +1,8 @@
-import Navbar from "../../utilities/menu.js";
+import Header from "../../utilities/header.js";
 import DataClient from "../../utilities/data-client.js";
 import JobList from "../../utilities/jobList.js";
 import Services from "../../utilities/services.js";
+import Footer from "../../utilities/footer.js";
 
 const form = document.querySelector("form");
 const userId = localStorage.getItem("user");
@@ -11,14 +12,10 @@ const role = localStorage.getItem("role");
 let jobId;
 
 const initApp = async () => {
-  new Navbar();
-  if (!userId || role === "employer") {
-    location.href = "/pages/users/profile.html";
-    return;
-  }
+  new Header();
+  if (redirectIfNotAllowed()) return;
 
   jobId = location.search.split("=")[1];
-
   if (!jobId) return;
 
   const displayJobs = await displayJob(jobId);
@@ -26,6 +23,17 @@ const initApp = async () => {
     const backBtn = document.querySelector("#backBtn");
     backBtn.addEventListener("click", handleBackBtn);
   }
+
+  new Footer();
+};
+
+const redirectIfNotAllowed = () => {
+  if (!userId || role === "employer") {
+    location.href = "/pages/users/profile.html";
+    return true;
+  }
+
+  return false;
 };
 
 const displayJob = async (id) => {
@@ -73,6 +81,7 @@ const displayJob = async (id) => {
   document.querySelector("aside").insertAdjacentHTML("afterbegin", asideHtml);
 
   services.handleButtons();
+  return true;
 };
 
 const handleSubmit = async (e) => {
@@ -97,12 +106,10 @@ const handleSubmit = async (e) => {
   }
 };
 
-await initApp();
-
 const handleBackBtn = () => {
   history.go(-1);
 };
-const backBtn = document.querySelector("#backBtn");
-backBtn.addEventListener("click", handleBackBtn);
+
+await initApp();
 
 form.addEventListener("submit", handleSubmit);

@@ -1,11 +1,11 @@
-export default class Navbar {
+export default class Header {
   constructor() {
     this.role = localStorage.getItem("role");
-    const navbar = this.#createNavbar();
-    document.querySelector("header").insertAdjacentHTML("afterbegin", navbar);
+    const header = this.#createHeader();
+    document.querySelector("header").insertAdjacentHTML("afterbegin", header);
   }
 
-  #createNavbar() {
+  #createHeader() {
     return /*html*/ `
         <nav>
             <ul>

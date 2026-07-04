@@ -28,6 +28,35 @@
       "id": "HKeZTE7QMm"
     }
   ],
+  "users2": [
+    {
+      "role": "employee",
+      "firstName": "Arne",
+      "lastName": "Karlsson",
+      "employerName": "",
+      "email": "arne@mail.com",
+      "password": "Password",
+      "id": "fPpXH9olQDk"
+    },
+    {
+      "role": "employer",
+      "firstName": "",
+      "lastName": "",
+      "employerName": "NordicTech Group AB",
+      "email": "nt@mail.com",
+      "password": "Password",
+      "id": "b7i4ow5fxr"
+    },
+    {
+      "role": "employer",
+      "firstName": "",
+      "lastName": "",
+      "employerName": "Bemanningsportalen",
+      "email": "bemanning@mail.com",
+      "password": "Password",
+      "id": "HKeZTE7QMm"
+    }
+  ],
   "jobs": [
     {
       "title": "Junior Systemutvecklare",
@@ -73,8 +102,18 @@
   "bookmarkedJobs": [
     {
       "userId": "fPpXH9olQDk",
-      "jobId": "bN0kWnj52h",
-      "id": "RSWw_qD5Ffk"
+      "jobId": "vRR76vaiOK",
+      "id": "drWDVGvm75Q"
+    },
+    {
+      "userId": "fPpXH9olQDk",
+      "jobId": "jJdY53LFbD",
+      "id": "BWIhuE_rSKo"
+    },
+    {
+      "userId": "HKeZTE7QMm",
+      "jobId": "jJdY53LFbD",
+      "id": "xhh7OuOeYi4"
     }
   ],
   "jobApplications": [

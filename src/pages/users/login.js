@@ -1,11 +1,18 @@
-import Navbar from "../../utilities/menu.js";
+import Header from "../../utilities/header.js";
 import DataClient from "../../utilities/data-client.js";
+import Footer from "../../utilities/footer.js";
 
+const userId = localStorage.getItem("user");
 const form = document.querySelector("form");
 const message = document.querySelector(".message");
 
 const initApp = () => {
-  new Navbar();
+  if (userId) {
+    location.href = "/pages/users/profile   .html";
+    return;
+  }
+  new Header();
+  new Footer();
 };
 
 const handleSubmit = async (e) => {

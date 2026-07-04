@@ -35,6 +35,7 @@ export default class DataClient {
       if (response.ok) {
         const result = await response.json();
         const user = result[0];
+        if (!user) return;
 
         if (user.password === password) {
           return user;

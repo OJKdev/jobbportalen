@@ -1,6 +1,7 @@
-import Navbar from "../../utilities/menu.js";
+import Header from "../../utilities/header.js";
 import DataClient from "../../utilities/data-client.js";
 import Services from "../../utilities/services.js";
+import Footer from "../../utilities/footer.js";
 
 const form = document.querySelector("form");
 const employeeRadio = document.querySelector("#employee");
@@ -11,7 +12,8 @@ const lastNameInput = document.querySelector("#lastName");
 const services = new Services();
 
 const initApp = () => {
-  new Navbar();
+  new Header();
+  new Footer();
 };
 
 const handleSubmit = async (e) => {

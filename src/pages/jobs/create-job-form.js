@@ -1,6 +1,7 @@
+import Header from "../../utilities/header.js";
 import DataClient from "../../utilities/data-client.js";
 import Services from "../../utilities/services.js";
-import Navbar from "../../utilities/menu.js";
+import Footer from "../../utilities/footer.js";
 
 const form = document.querySelector("form");
 const backBtn = document.querySelector("#backBtn");
@@ -11,11 +12,23 @@ let job;
 let editJobId;
 
 const initApp = async () => {
+  if (redirectIfNotAllowed()) return;
+  await loadJobForEdit();
+
+  new Header();
+  new Footer();
+};
+
+const redirectIfNotAllowed = () => {
   if (!userId || role === "employee") {
     location.href = "/pages/users/profile.html";
-    return;
+    return true;
   }
 
+  return false;
+};
+
+const loadJobForEdit = async () => {
   const editJobId = location.search.split("=")[1];
   if (editJobId) {
     job = await services.getJob(editJobId);
@@ -26,8 +39,6 @@ const initApp = async () => {
       job = undefined;
     }
   }
-
-  new Navbar();
 };
 
 const populateForm = async () => {
