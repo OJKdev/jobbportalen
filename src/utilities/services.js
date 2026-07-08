@@ -3,9 +3,9 @@ import DataClient from "./data-client.js";
 export default class Services {
   constructor() {
     this.userId = localStorage.getItem("user");
+    this.role = localStorage.getItem("role");
     this.quedBookmark = localStorage.getItem("quedBookmark");
     this.quedJobApplication = localStorage.getItem("quedJobApplication");
-    this.role = localStorage.getItem("role");
 
     this.handleLoginRedirection();
   }

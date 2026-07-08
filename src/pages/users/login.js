@@ -8,7 +8,7 @@ const message = document.querySelector(".message");
 
 const initApp = () => {
   if (userId) {
-    location.href = "/pages/users/profile   .html";
+    location.href = "/pages/users/profile.html";
     return;
   }
   new Header();
@@ -29,6 +29,7 @@ const handleSubmit = async (e) => {
       <p>Det gick inte att logga in med dessa uppgifterna.... Prova igen eller <a href="/pages/users/register.html">skapa ett konto.</a></p>`;
   } else {
     localStorage.setItem("user", result.id);
+    localStorage.setItem("role", result.role);
     location.href = "/pages/users/profile.html";
   }
 };

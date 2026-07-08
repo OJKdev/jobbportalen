@@ -1,6 +1,6 @@
 @import "../../assets/css/site.css";
 @import "../../assets/css/jobList.css";
-@import "../../assets/css/pagegrid.css";
+@import "../../assets/css/grid-layout.css";
 
 .name {
   font-weight: 600;
@@ -16,9 +16,6 @@
 }
 #jobs {
   margin-bottom: 1rem;
-}
-.applicaitons {
-  display: flex;
 }
 
 .data-entry {
@@ -37,24 +34,16 @@
 }
 
 .tabBtn.active {
-  background-color: white;
+  background-color: var(--background-color);
 
   color: var(--text-color);
-  border-bottom: solid 5px var(--priamary-color);
+  border-bottom: solid 5px var(--primary-color);
 
   border-radius: 0;
   height: 2.5rem;
 }
 .tabBtn {
-  background-color: white;
-
-  color: var(--text-color);
-  border: 0;
-  border-radius: 0;
-  height: 2.5rem;
-}
-.tabBtn {
-  background-color: white;
+  background-color: var(--background-color);
 
   color: var(--text-color);
   border: 0;
@@ -64,7 +53,7 @@
 
 @media (min-width: 768px) {
   .tabBtn.active {
-    border-right: solid 5px var(--priamary-color);
+    border-right: solid 5px var(--primary-color);
     border-bottom: 0;
   }
 }

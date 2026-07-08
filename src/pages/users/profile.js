@@ -9,13 +9,18 @@ const logoutBtn = document.querySelector("#logout");
 
 const services = new Services();
 
-const initApp = () => {
+const initApp = async () => {
   if (!userId) {
     location.href = "/pages/users/login.html";
     return;
   }
+  new Header();
 
-  loadUser();
+  const user = await loadUser();
+  renderAside(user);
+
+  handleTabButtons();
+
   new Footer();
 };
 
@@ -28,25 +33,18 @@ const loadUser = async () => {
   }
 
   if (user.role === "employee") {
-    localStorage.setItem("role", "employee");
-
     await displayBoomarkedJobs();
     await displayEmployeeJobApplications(user);
   }
 
   if (user.role === "employer") {
-    localStorage.setItem("role", "employer");
-
     const jobs = await services.getEmployerJobs(user);
     const applications = await services.getEmployersApplications(jobs);
 
     await displayEmployersJobs(jobs);
     await displayAppliedJobs(applications);
   }
-
-  new Header();
-  renderAside(user);
-  handleTabButtons();
+  return user;
 };
 
 const displayBoomarkedJobs = async () => {

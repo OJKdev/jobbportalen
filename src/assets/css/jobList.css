@@ -65,7 +65,7 @@
 }
 
 .job button:hover {
-  color: var(--priamary-color);
+  color: var(--primary-color);
 }
 @media (min-width: 768px) {
   .job {

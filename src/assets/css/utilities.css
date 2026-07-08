@@ -24,7 +24,7 @@
 }
 
 .btn:hover {
-  background-color: var(--priamary-color);
+  background-color: var(--primary-color);
 
   font-weight: 700;
 }

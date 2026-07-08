@@ -1,6 +1,6 @@
 @import "./header.css";
 @import "./utilities.css";
-@import "./searchBar.css";
+@import "./searchbar.css";
 @import "./footer.css";
 
 @font-face {
@@ -23,8 +23,8 @@
 }
 
 :root {
-  --background-color: #ede7e3;
-  --priamary-color: #489fb5;
+  --background-color: #fafafa;
+  --primary-color: #489fb5;
   --secondary-color: #ffa62b;
   --text-color: #222222;
   --primary-border-color: #d7d7d7;
@@ -54,17 +54,11 @@
 
   gap: 1rem;
 }
-html,
-body {
-  min-height: 100%;
-}
 
 body {
-  min-height: 100%;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Satoshi", sans-serif;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -148,9 +142,6 @@ form input:valid {
   color: var(--text-color);
 }
 
-form input:focus + label {
-  display: none;
-}
 form input:focus + label,
 form input:valid + label {
   display: none;

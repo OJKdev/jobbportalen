@@ -24,7 +24,7 @@
 }
 
 .searchbar form input {
-  font-family: "Satoshi-regualr", sans-serif;
+  font-family: "Satoshi", sans-serif;
   position: initial;
 
   height: 40px;
@@ -40,4 +40,11 @@
 
 .fa-magnifying-glass {
   margin-left: 1rem;
+}
+
+.searchbar label {
+  display: block !important;
+}
+.searchbar input:focus + label {
+  display: none !important;
 }
