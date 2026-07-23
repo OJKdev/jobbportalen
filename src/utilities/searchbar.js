@@ -20,7 +20,8 @@ export default class SearchBar {
   }
 
   hasSearchParams() {
-    const search = decodeURIComponent(location.search.split("=")[1]);
+    const search = location.search.split("search=")[1];
+
     return search;
   }
 

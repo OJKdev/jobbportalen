@@ -12,6 +12,7 @@ const services = new Services();
 const initApp = () => {
   new Header();
   search = new SearchBar().hasSearchParams();
+  if (search) search = decodeURIComponent(search);
 
   displayJobs();
   new Footer();
