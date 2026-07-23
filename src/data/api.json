@@ -80,6 +80,11 @@
       "userId": "fPpXH9olQDk",
       "jobId": "CSQjhNBiFH",
       "id": "GZ0lsUXbRLc"
+    },
+    {
+      "userId": "fPpXH9olQDk",
+      "jobId": "bN0kWnj52h",
+      "id": "pQloRopD11c"
     }
   ],
   "jobApplications": [
@@ -96,6 +101,13 @@
       "letter": "Här med söker jag jobbet....",
       "createdAt": "2026-07-02T07:19:17.942Z",
       "id": "IV4EKhmTA7o"
+    },
+    {
+      "employeeId": "fPpXH9olQDk",
+      "jobId": "bN0kWnj52h",
+      "letter": "Jag vill söka detta jobb....",
+      "createdAt": "2026-07-23T07:30:12.823Z",
+      "id": "PkQZpmeqsQ8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
