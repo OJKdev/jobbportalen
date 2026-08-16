@@ -176,10 +176,11 @@ export default class Services {
     if (applyButton) {
       if (this.role === "employer") {
         applyButton.style.display = "none";
+      } else {
+        applyButton.addEventListener("click", async (e) => {
+          this.applyJob(e.currentTarget.id);
+        });
       }
-      applyButton.addEventListener("click", async (e) => {
-        this.applyJob(e.currentTarget.id);
-      });
     }
 
     const bookmarkButtons = document.querySelectorAll(".fa-bookmark");
@@ -189,6 +190,7 @@ export default class Services {
         const button = icon.parentElement;
         if (this.role === "employer") {
           button.style.display = "none";
+          return;
         }
 
         button.addEventListener("click", async () => {

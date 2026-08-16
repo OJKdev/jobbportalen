@@ -1,9 +1,9 @@
 export default class JobList {
-  constructor(header, element, selectedJobs, bookMarkedJobIds, emptyMessage) {
+  constructor(header, element, selectedJobs, bookmarkedJobIds, emptyMessage) {
     this.header = header;
     this.jobs = selectedJobs;
     this.emptyMessage = emptyMessage;
-    this.bookMarkedJobIds = bookMarkedJobIds;
+    this.bookmarkedJobIds = bookmarkedJobIds;
 
     const jobList = this.#createJobList();
 
@@ -29,7 +29,7 @@ export default class JobList {
                 </section>
               </a>
 
-             <button id="${job.id}"><i class="${this.bookMarkedJobIds.includes(job.id) ? "fa-solid" : "fa-regular"} fa-bookmark"></i></button>
+             <button id="${job.id}"><i class="${this.bookmarkedJobIds.includes(job.id) ? "fa-solid" : "fa-regular"} fa-bookmark"></i></button>
  
             </section>
             
