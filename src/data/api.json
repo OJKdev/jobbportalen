@@ -68,22 +68,9 @@
       "employerId": "HKeZTE7QMm",
       "companyName": "Kreativa Byrån",
       "iamgeFileName": "kreativaByrån.webp"
-    },
-    {
-      "employerId": "HKeZTE7QMm",
-      "title": "test",
-      "companyName": "test",
-      "description": "tezst",
-      "iamgeFileName": "praktiseaLogo.png",
-      "id": "ebs3kYai2To"
     }
   ],
   "bookmarkedJobs": [
-    {
-      "userId": "fPpXH9olQDk",
-      "jobId": "jJdY53LFbD",
-      "id": "BWIhuE_rSKo"
-    },
     {
       "userId": "fPpXH9olQDk",
       "jobId": "ebs3kYai2To",
@@ -93,11 +80,6 @@
       "userId": "fPpXH9olQDk",
       "jobId": "bN0kWnj52h",
       "id": "-cr36DkPkmI"
-    },
-    {
-      "userId": "fPpXH9olQDk",
-      "jobId": "vRR76vaiOK",
-      "id": "f8d66MYkPM4"
     },
     {
       "userId": "fPpXH9olQDk",
